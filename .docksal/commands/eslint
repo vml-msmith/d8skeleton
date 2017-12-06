@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+## Synchronize local environment with remote
+##
+## Usage: fin envsync <remote>
+
+
+#-------------------------- Helper functions --------------------------------
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+source "$DIR/../functions.sh"
+
+#-------------------------- END: Helper functions --------------------------------
+
+#-------------------------- Execution --------------------------------
+
+EXIT_CODE=0
+
+## Main script
+subheader "Running ESLINT..."
+
+fin run eslint --quiet $@ || fin util && fin run eslint --quiet $@
+
+EXIT_CODE=$(($EXIT_CODE + $?)) 
+exit $EXIT_CODE
+
+#-------------------------- END: Execution --------------------------------

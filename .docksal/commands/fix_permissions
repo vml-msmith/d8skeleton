@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+## Fix permissions inside of docker cli
+##
+## Usage: fin fix_permissions
+
+
+#-------------------------- Helper functions --------------------------------
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+source "$DIR/../functions.sh"
+
+#-------------------------- END: Helper functions --------------------------------
+
+#-------------------------- Execution --------------------------------
+
+
+header "Fixing Docker Permissions"
+PERM=`fin exec stat . -c %u:%g`
+PERM=$(echo $PERM|tr -d '\r')
+subheader "Home directory..."
+fin exec "sudo chown -R $PERM /home/docker"
+subheader "Web directory..."
+fin exec "sudo chown -R $PERM /var/www"
+
+if [[ ! -z "${COMPOSER_CACHE_DIR}" ]]; then
+  subheader "Cache directory..."
+  fin exec "sudo chown -R $PERM $COMPOSER_CACHE_DIR"
+fi
+echo "Done."
+#-------------------------- END: Execution --------------------------------

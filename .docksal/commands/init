@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+## Initialize a Docksal powered Drupal 8 site
+##
+## Usage: fin init
+
+#-------------------------- Helper functions --------------------------------
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+source "$DIR/../functions.sh"
+
+#-------------------------- END: Helper functions --------------------------------
+
+#-------------------------- Execution --------------------------------
+
+if [[ "$PROJECT_ROOT" == "" ]]; then
+  echo-red "\$PROJECT_ROOT is not set"
+  exit 1
+fi
+
+# Project initialization steps
+cd $PROJECT_ROOT
+fin builder
+fin envsync --no-confirm --no-composer stage
+
+#-------------------------- END: Execution --------------------------------

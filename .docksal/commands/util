@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+## Install required utilities for other commands
+##
+## Usage: fin util
+
+
+#-------------------------- Helper functions --------------------------------
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+source "$DIR/../functions.sh"
+
+#-------------------------- END: Helper functions --------------------------------
+
+#-------------------------- Sanity Check --------------------------------
+
+if [[ "$PROJECT_ROOT" == "" ]]; then
+  echo-red "\$PROJECT_ROOT is not set"
+  exit 1
+fi
+
+#-------------------------- END: Sanity Check --------------------------------
+
+#-------------------------- Execution --------------------------------
+
+subheader "Installing utilities"
+
+cd $PROJECT_ROOT
+
+fin exec yarn global add eslint bower yaml-cli --no-progress --quiet
+
+#-------------------------- END: Execution --------------------------------
+fin exec sudo ln -s /home/docker/.yarn/bin/yaml /usr/bin/yaml
+fin exec sudo ln -s /home/docker/.yarn/bin/eslint /usr/bin/eslint
+fin exec sudo ln -s /home/docker/.yarn/bin/bower /usr/bin/bower

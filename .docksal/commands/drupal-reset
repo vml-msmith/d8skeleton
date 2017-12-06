@@ -1,0 +1,74 @@
+#!/usr/bin/env bash
+
+## Reset a drupal installation running updates and reverting features
+##
+## Usage: fin drupal-reset <environment>
+
+
+#-------------------------- Helper functions --------------------------------
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+source "$DIR/../functions.sh"
+
+#-------------------------- END: Helper functions --------------------------------
+
+#-------------------------- Settings --------------------------------
+
+ENVMOD_ENABLED=0
+WATCHDOG_ENABLED=0
+
+ENVIRONMENT=$1
+if [[ "$ENVIRONMENT" == "" ]]; then
+  ENVIRONMENT=dev
+fi
+
+fin ddrush pml | grep "(envmod)" | grep "Enabled" &> /dev/null
+if [[ "$?" == "0" ]]; then
+  ENVMOD_ENABLED=1
+fi
+
+set +e
+
+fin ddrush pml | grep "(dblog)" | grep "Enabled" &> /dev/null
+if [[ "$?" == "0" ]]; then
+  WATCHDOG_ENABLED=1
+fi
+
+set -e
+
+#-------------------------- END: Settings --------------------------------
+
+#-------------------------- Execution --------------------------------
+
+header "Drupal Reset"
+step=1
+
+if [ "${ENVMOD_ENABLED}" == "0" ]; then
+  step_header "Enable ENVMOD"
+  fin ddrush pm-enable envmod -y
+fi
+
+step_header "Switching Environment"
+fin ddrush switch-environment $ENVIRONMENT
+
+if [ "${WATCHDOG_ENABLED}" == "1" ]; then
+  step_header "Clearing Watchdog Logs"
+  fin ddrush watchdog-delete all -y
+fi
+
+step_header "Database Updates"
+fin ddrush updatedb -y
+
+step_header "Entity Updates"
+fin ddrush entup -y
+
+step_header "Importing Core Feature"
+fin ddrush fim tn_vacation_core -y
+
+step_header "Importing All Features"
+fin ddrush fia -y
+
+step_header "Rebuilding Cache"
+fin ddrush cr
+
+#-------------------------- END: Execution --------------------------------

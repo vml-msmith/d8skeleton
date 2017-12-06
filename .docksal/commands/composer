@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+## Run composer command in project docroot
+##
+## Usage: fin composer <command>
+
+
+#-------------------------- Helper functions --------------------------------
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+source "$DIR/../functions.sh"
+
+#-------------------------- END: Helper functions --------------------------------
+
+#-------------------------- Execution --------------------------------
+
+cd $PROJECT_ROOT
+
+fin exec composer $@
+
+#-------------------------- END: Execution --------------------------------

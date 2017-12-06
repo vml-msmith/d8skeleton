@@ -1,0 +1,193 @@
+#!/usr/bin/env bash
+
+## Pull ffresh database and reset drupal
+##
+## Usage: fin envsync <environment>
+
+#-------------------------- Helper functions --------------------------------
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+source "$DIR/../functions.sh"
+
+#-------------------------- END: Helper functions --------------------------------
+
+#-------------------------- Settings --------------------------------
+
+CONFIRMED=0
+NO_CONFIRM=0
+NO_DUMP=0
+NO_IMPORT=0
+NO_FILES=1
+NO_COMPOSER=0
+NO_RESET=0
+NO_DUMP_RECENT=0
+
+DUMP_DIR="db_backup/"
+
+#-------------------------- END: Settings --------------------------------
+
+#-------------------------- Options --------------------------------
+
+while [ "$1" != "" ]; do
+  case $1 in
+    --no-confirm )
+      NO_CONFIRM=1
+      CONFIRMED=1
+      ;;
+    --no-dump )
+      NO_DUMP=1
+      ;;
+    --dump-dir )
+      shift
+      DUMP_DIR=$1
+      ;;
+    --dump-only )
+      NO_IMPORT=1
+      NO_FILES=1
+      NO_COMPOSER=1
+      NO_RESET=1
+      ;;
+    --no-dump-recent )
+      NO_DUMP_RECENT=1
+      ;;
+    --no-import )
+      NO_IMPORT=1
+      ;;
+    --import-only )
+      NO_DUMP=1
+      NO_FILES=1
+      NO_COMPOSER=1
+      NO_RESET=1
+      ;;
+    --no-files )
+      NO_FILES=1
+      ;;
+    --files-only )
+      NO_DUMP=1
+      NO_IMPORT=1
+      NO_COMPOSER=1
+      NO_RESET=1
+      NO_FILES=0
+      ;;
+    --no-composer )
+      NO_COMPOSER=1
+      ;;
+    --composer-only )
+      NO_DUMP=1
+      NO_IMPORT=1
+      NO_FILES=1
+      NO_RESET=1
+      ;;
+    --no-reset )
+      NO_RESET=1
+      ;;
+    --reset-only )
+      NO_DUMP=1
+      NO_IMPORT=1
+      NO_FILES=1
+      NO_COMPOSER=1
+      ;;
+    * )
+      break
+  esac
+  shift
+done
+
+#-------------------------- END: Options --------------------------------
+
+#-------------------------- Execution --------------------------------
+
+header "Environment Sync"
+
+if [[ "$1" == "" ]]; then
+  echo "Usage: fin envsync <remote>"
+  exit 1
+fi
+
+## Script variables
+ENVIRONMENT=$1
+
+if [[ "$ENVIRONMENT" == "stage" ]]; then
+  ENVIRONMENT=test
+fi
+
+ALIAS=tnvacation.${ENVIRONMENT}
+
+## Database file
+FILE=${PROJECT_ROOT}/${DUMP_DIR}${ALIAS}.sql
+
+## Make backup dir if it does not already exist
+mkdir -p $PROJECT_ROOT/db_backup
+
+if [ $NO_CONFIRM == 0 ]; then
+  read -p "This could overwrite your database and your files directory. Are you sure?" -n 1 -r
+  if [[ $REPLY =~ ^[Yy]$ ]]; then
+    CONFIRMED=1
+  fi
+fi
+
+echo ""
+
+cd $PROJECT_ROOT/$DOCROOT
+
+if [[ $CONFIRMED == 1 ]]; then
+
+  step=1
+
+  ## Check Target file age.
+  if [ $NO_DUMP_RECENT == 1 ]; then
+    step_header "Checking dump file"
+    if [ -f "$FILE" ]; then
+      if [ -z `find ${FILE} -mmin +360` ]; then
+        echo "Dump file is recent, skipping database dump"
+        NO_DUMP=1
+      else
+        echo "Dump file is old and will be replaced"
+      fi
+    else
+      echo "Dump file does not exist"
+    fi
+  fi
+
+  if [ $NO_DUMP == 0 ]; then
+    step_header "Dumping database"
+    cd $PROJECT_ROOT/$DOCROOT
+    fin drush @${ALIAS} cr
+    fin drush @${ALIAS} sql-dump --skip-tables-key=common > ${FILE}
+    echo-yellow "Converting to MyISAM..."
+    sed -i.bak 's/InnoDB/MyISAM/g' ${FILE}
+    echo Created backup at ${FILE}
+  fi
+
+  if [ $NO_IMPORT == 0 ]; then
+    if [ -f "$FILE" ];
+    then
+      step_header "Importing database"
+      cd $PROJECT_ROOT/$DOCROOT
+      fin sqli ${FILE}
+    else
+      echo ${FILE} not found.
+      exit 1
+    fi
+  fi
+
+  if [ $NO_FILES == 0 ]; then
+    cd $PROJECT_ROOT/$DOCROOT
+    step_header "Syncing files"
+    fin drush -y --exclude-paths=files/styles:files/js:files/css rsync --progress --delete -v @${ALIAS}:%files sites/default
+  fi
+
+  if [ $NO_COMPOSER == 0 ]; then
+    cd $PROJECT_ROOT
+    step_header "Composer install"
+    fin exec composer install --prefer-dist -v -o
+  fi
+
+  if [ $NO_RESET == 0 ]; then
+    cd $PROJECT_ROOT/$DOCROOT
+    step_header "Reset Drupal"
+    fin drupal-reset
+  fi
+fi
+
+#-------------------------- END: Execution --------------------------------

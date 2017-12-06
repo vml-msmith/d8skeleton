@@ -1,0 +1,47 @@
+docker:
+  container_id: wendys
+  hostname: wendys
+
+drupal:
+  profile: standard
+  site_name: wendys
+  site_mail: drupal@vml.com
+  admin_account_name: admin
+  admin_account_pass: pass
+
+drush:
+  aliases:
+    local: spire.local
+    dev: spire.dev
+    stage: spire.test
+    prod: spire.prod
+
+lint_ignore:
+  - scripts/linter.php
+  - scripts/gulper.php
+  - .drush
+  - acapi.drush.inc
+  - spire.aliases.drushrc.php
+  - docroot/sites/*
+  - '*composer.json'
+  - '*package.json'
+  - '*selection.json'
+  - '*gulpfile.js'
+  - .docker/Dockerfile.phpcli
+  - acquia-utils/logview.php
+
+theme_builder:
+  themes:
+    themesrc:
+      - npm
+      - gulp
+
+
+frontend_builder:
+  -
+    name: themesrc
+    path: themesrc
+    proc:
+      - npm
+      - gulp
+      - gulp-watch

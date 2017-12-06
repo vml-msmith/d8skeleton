@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+## Run drush command in project docroot
+##
+## Usage: fin ddrush <command>
+
+
+#-------------------------- Helper functions --------------------------------
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+source "$DIR/../functions.sh"
+
+#-------------------------- END: Helper functions --------------------------------
+
+#-------------------------- Execution --------------------------------
+
+cd $DOCROOT_PATH
+fin drush $@
+
+#-------------------------- END: Execution --------------------------------

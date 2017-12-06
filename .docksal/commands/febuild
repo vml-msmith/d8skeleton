@@ -1,0 +1,120 @@
+#!/usr/bin/env bash
+
+## Build front end artifacts
+##
+## Usage: fin febuild <processes>
+
+#-------------------------- Helper functions --------------------------------
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+source "$DIR/../functions.sh"
+
+#-------------------------- END: Helper functions --------------------------------
+
+#-------------------------- Functions --------------------------------
+
+yaml_val() {
+  cd $PROJECT_ROOT
+  echo $(fin exec yaml get environment.yml ${1} | tr -d '\r' | xargs)
+}
+
+#-------------------------- END: Functions --------------------------------
+
+#-------------------------- Execution --------------------------------
+
+while [ "$1" != "" ]; do
+  case $1 in
+    --name )
+      shift
+      NAME=$1
+      ;;
+    * )
+      break
+  esac
+  shift
+done
+
+PROCESSES=$@
+
+## Main script
+header "Front End Builder"
+
+cd $PROJECT_ROOT
+
+## Sanity Check
+for PROCESS in $PROCESSES; do
+  if [[ "$PROCESS" != "npm" && "$PROCESS" != "yarn" && "$PROCESS" != "bower" && "$PROCESS" != "gulp-build" && "$PROCESS" != "gulp-watch" ]]; then
+    echo-red ${PROCESS} not recognized
+    exit 1
+  fi
+
+  if [[ "$PROCESS" == "gulp-watch" ]]; then
+    if [ -z ${NAME+x} ]; then
+      echo-red gulp-watch requires a name specification
+      exit 1
+    fi
+  fi
+done
+
+COUNT=$(fin exec yaml get environment.yml frontend_builder.length | tr -d '\r' | xargs)
+
+for((i=0; i < $COUNT; ++i)); do
+  cd $PROJECT_ROOT
+  THEME_NAME=$(yaml_val frontend_builder.${i}.name)
+  THEME_PATH=$(yaml_val frontend_builder.${i}.path)
+  THEME_PROC=$(yaml_val frontend_builder.${i}.proc)
+
+  if [ -n "$NAME" ] && [ "$NAME" != "$THEME_NAME" ]; then
+    continue
+  fi
+  
+  
+  subheader "Processing ${THEME_NAME}"
+  section=$THEME_NAME
+  step=1
+
+
+  for PROCESS in $PROCESSES; do
+
+    case "$PROCESS" in
+      npm)
+        echo "$THEME_PROC" | grep -q "npm" &&
+        step_header "Running npm" &&
+        cd $THEME_PATH &&
+        fin exec npm install &&
+        cd $PROJECT_ROOT
+        ;;
+      yarn)
+        echo "$THEME_PROC" | grep -q "yarn" &&
+        step_header "Running yarn" &&
+        cd $THEME_PATH &&
+        fin exec yarn install --no-progress --quiet &&
+        cd $PROJECT_ROOT
+        ;;
+      bower)
+        echo "$THEME_PROC" | grep -q "bower" &&
+        step_header "Running bower" &&
+        cd $THEME_PATH &&
+        fin exec bower install --allow-root &&
+        cd $PROJECT_ROOT
+        ;;
+      gulp-build)
+        echo "$THEME_PROC" | grep -q "gulp" &&
+        step_header "Running gulp-build" &&
+        cd $THEME_PATH &&
+        fin exec yarn run gulp build &&
+        cd $PROJECT_ROOT
+        ;;
+      gulp-watch)
+        echo "$THEME_PROC" | grep -q "gulp" &&
+        step_header "Running gulp-watch" &&
+        cd $THEME_PATH &&
+        fin exec yarn run gulp watch &&
+        cd $PROJECT_ROOT
+        ;;
+    esac
+  done
+
+done
+
+#-------------------------- END: Execution --------------------------------
