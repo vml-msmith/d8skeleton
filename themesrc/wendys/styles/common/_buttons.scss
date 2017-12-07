@@ -1,0 +1,43 @@
+@charset 'UTF-8';
+
+@mixin button-fill {
+  background: $blue-light;
+  border: 1px solid $blue-light;
+  border-radius: 2px;
+  color: $white;
+  display: block;
+  font-size: 1.8rem;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &:hover {
+    background: $blue;
+    border-color: $blue;
+  }
+
+  &:disabled,
+  .disabled {
+    background: $gray-secondary-light;
+    border-color: $gray-secondary-light;
+  }
+}
+
+@mixin button-outline {
+  @include button-fill;
+
+  background: transparent;
+  color: $blue-light;
+
+  &:hover {
+    background: transparent;
+    color: $blue;
+  }
+
+  &:disabled,
+  .disabled {
+    background: transparent;
+    color: $gray-secondary-light;
+  }
+}

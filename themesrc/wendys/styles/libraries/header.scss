@@ -1,0 +1,62 @@
+@charset 'UTF-8';
+
+@import '../common/colors';
+@import '../common/gutters';
+@import '../common/images';
+
+header {
+  background: $background-color-header;
+  color: $text-color-dark;
+
+  .site-name {
+    display: none;
+  }
+}
+
+.region-top {
+  position: relative;
+}
+
+.region-top-top-menu {
+  background: url($image-header-background) $white;
+  border-bottom: $gray-border 2px solid;
+}
+
+.block-system-branding-block {
+  left: calc(100% * .083333);
+  position: absolute;
+  top: 5px;
+
+  img {
+    height: 51px;
+  }
+}
+
+.menu--top-bar {
+  > .menu {
+    margin: 0;
+    padding-bottom: 8px;
+    text-align: right;
+  }
+
+  li {
+    display: inline-block;
+    height: 51px;
+  }
+}
+
+.menu--main {
+  @include gutter;
+
+  li {
+    display: inline-block;
+    font-size: 1.4rem;
+    padding: 17px 0;
+
+    a {
+      margin: auto 0;
+      text-align: center;
+      text-decoration: none;
+    }
+  }
+}

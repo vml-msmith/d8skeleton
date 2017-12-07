@@ -3,3 +3,5 @@ wendys-global:
   css:
     layout:
       dist/css/main.css: {}
+      dist/css/header.css: {}
+      dist/css/footer.css: {}

@@ -1,5 +1,77 @@
 @charset 'UTF-8';
 
+@import '../common/colors';
+@import '../common/buttons';
+
 html {
   font-size: 62.5%;
+}
+
+body {
+  background: $background-color-bottom;
+  color: $text-color-light;
+
+  .block-menu {
+    .menu {
+      margin: 0;
+      margin-left: 0;
+    }
+  }
+
+}
+
+main {
+  background: $background-color-main;
+  color: $text-color-dark;
+}
+
+
+
+.brick-hero {
+  position: relative;
+
+  > .field,
+  .inner {
+    position: relative;
+  }
+
+  .field--name-field-hero-background {
+    position: initial;
+
+    .media--background {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      bottom: 0;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100%;
+    }
+  }
+
+
+  .inner {
+    padding: 50px 30px;
+  }
+
+  .field--name-field-hero-copy {
+    color: $white;
+    font-size: 50px;
+    margin-bottom: 20px;
+    min-height: 1px;
+    position: relative;
+    text-align: center;
+    text-shadow: 0 6px 6px $hero-text-shadow;
+    text-transform: uppercase;
+    width: 100%;
+  }
+
+  .field--name-field-hero-cta {
+    a {
+      @include button-fill;
+    }
+  }
 }
