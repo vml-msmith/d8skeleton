@@ -1,0 +1,5 @@
+wendys-global:
+  version: 1.x
+  css:
+    layout:
+      dist/css/main.css: {}

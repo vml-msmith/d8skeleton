@@ -1,0 +1,22 @@
+name: Wendys Main
+type: theme
+description: 'A custom theme for wendys.com'
+core: 8.x
+base theme: classy
+
+regions:
+  top: 'Top Bar'
+  top_top_menu: 'Top Bar - Top Menu'
+  top_menu: 'Top Bar - Menu'
+  highlighted: 'Highlighted'
+  help: 'Help'
+  content: 'Content'
+  footer: 'Footer'
+  footer_bottom: 'Bottom'
+  hidden: 'Hidden Region (Not Displayed)'
+
+ckeditor_stylesheets:
+  - dist/css/global/ckeditor-iframe.css
+
+libraries:
+  - wendys_main/wendys-global

@@ -8,10 +8,10 @@ docroot/themes/contrib
 docroot/profiles/contrib
 docroot/sites/default/settings.docker.php
 docroot/sites/default/services.yml
-docroot/sites/themes/custom/**/*.css
-docroot/sites/themes/custom/**/*.scss
-docroot/sites/themes/custom/**/*.js.map
-docroot/sites/themes/custom/**/**/*.css
+docroot/themes/custom/**/*.css
+docroot/themes/custom/**/*.scss
+docroot/themes/custom/**/*.js.map
+docroot/themes/custom/wendys_main/dist/
 docroot/libraries/
 docroot/modules/search_kint/
 

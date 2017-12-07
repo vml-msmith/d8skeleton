@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * {@inheritdoc}
+ */
+function wendys_main_preprocess(&$variables, $hook, $info) {
+  if ($hook === 'eck_entity') {
+    $bundle = $variables['bundle'];
+    $entity = $variables['eck_entity'];
+    $class = array();
+    if (isset($variables['attributes']['class']) && is_array($variables['attributes']['class'])) {
+      $class = $variables['attributes']['class'];
+    }
+
+    $class[] = 'brick';
+    $class[] = 'brick-' . $bundle;
+
+    $variables['attributes']['class'] = $class;
+  }
+}
