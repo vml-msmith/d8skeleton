@@ -4,8 +4,7 @@ module.exports = {
   },
   sass: {
     src: [
-      './wendys/styles/**/*.scss',
-      './wendys/styles/**/**/*.scss'
+      './wendys/styles/libraries/*.scss',
     ],
     lintSrc: [
       './wendys/styles/**/*.scss',
@@ -22,9 +21,9 @@ module.exports = {
     src: ['./wendys/fonts/*']
   },
   buildLocations: {
-    css: '../docroot/themes/custom/wendys/dist/css',
-    js: '../docroot/themes/custom/wendys/dist/js',
-    img: '../docroot/themes/custom/wendys/dist/img',
-    fonts: '../docroot/themes/custom/wendys/dist/fonts'
+    css: '../docroot/themes/custom/wendys_main/dist/css',
+    js: '../docroot/themes/custom/wendys_main/dist/js',
+    img: '../docroot/themes/custom/wendys_main/dist/img',
+    fonts: '../docroot/themes/custom/wendys_main/dist/fonts'
   }
 };

@@ -2,7 +2,6 @@
 
 var gulp = require('gulp-help')(require('gulp'), { hideDepsMessage: true, afterPrintCallback: cliNotes });
 var bs = require('browser-sync').create();
-var fs  = require('fs');
 var gulpUtil = require('gulp-util');
 var concat = require('gulp-concat');
 var rename = require('gulp-rename');
@@ -63,22 +62,12 @@ gulp.task('_build.javascript', 'Build JavaScript and move to distribute', () => 
 });
 
 gulp.task('_sass-lint', 'Lint Sass to check for style errors', () => {
-    var file = fs.createWriteStream('linters/sass-lint.html');
-    var stream = gulp.src([
-        'wendys/styles/**/*.scss', 
-        'wendys/styles/**/**/*.scss', 
-        'wendys/styles/**/**/*.scss'
-    ])
     var tasks = CONFIGS.map(config => {
         return gulp.src(config.sass.lintSrc)
         .pipe(sassLint({
-          sasslintConfig: '.sass-lint.yml',
-          formatter: 'html-template-page'
+          sasslintConfig: '.sass-lint.yml'
         }))
-        .pipe(sassLint.format(file));
-        stream.on('finish', function () {
-            file.end();
-        })
+        .pipe(sassLint.format())
         .pipe(sassLint.failOnError())
         .on('error', swallowError);
     });
