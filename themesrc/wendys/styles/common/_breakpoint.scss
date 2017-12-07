@@ -1,0 +1,11 @@
+@charset 'UTF-8';
+
+$tablet: 600px;
+$desktop: 900px;
+$large-desktop: 1500px;
+
+@mixin breakpoint($point) {
+  @media (min-width: $point) {
+    @content;
+  }
+}

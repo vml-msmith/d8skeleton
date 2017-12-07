@@ -2,6 +2,7 @@
 
 @import '../common/colors';
 @import '../common/buttons';
+@import '../common/breakpoint';
 
 html {
   font-size: 62.5%;
@@ -25,7 +26,24 @@ main {
   color: $text-color-dark;
 }
 
+.block-menu {
+  .menu-item {
 
+    .default {
+      display: none;
+    }
+
+    @include breakpoint($tablet) {
+      .mobile {
+        display: none;
+      }
+
+      .default {
+        display: block;
+      }
+    }
+  }
+}
 
 .brick-hero {
   position: relative;

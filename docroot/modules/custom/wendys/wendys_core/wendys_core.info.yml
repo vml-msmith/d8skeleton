@@ -1,0 +1,9 @@
+name: Core
+description: 'Core functionality of the Wendys.com website.'
+type: module
+core: 8.x
+dependencies:
+  - features
+  - system
+version: 8.x.1.0
+package: 'Wendy''s'

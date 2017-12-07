@@ -1,0 +1,62 @@
+<?php
+
+/**
+ * @file
+ * Wendy's Core hook implementations.
+ */
+
+use Drupal\core\Entity\EntityTypeInterface;
+use Drupal\Core\Field\BaseFieldDefinition;
+
+/**
+ * Implements hook_entity_base_field_info().
+ *
+ * Add fields to menus:
+ *  - Mobile Link Title.
+ */
+function wendys_core_entity_base_field_info(EntityTypeInterface $entity_type) {
+  $fields = [];
+  if ($entity_type->id() == 'menu_link_content') {
+    $fields['field_menu_mobile_link_title'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Mobile menu link title'))
+      ->setDescription(t('The text to be used for the mobile version of this link. Will use the Menu link title if left blank.'))
+      ->setSetting('max_length', 255)
+      ->setDisplayOptions('view', [
+        'label' => 'hidden',
+        'type' => 'string',
+        'weight' => -5,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+        'weight' => -5,
+      ])
+      ->setDisplayConfigurable('form', TRUE);
+  }
+
+  return $fields;
+}
+
+/**
+ * Implements hook_preprocess().
+ *
+ * Display custom fields on menus:
+ *  - Mobile Link Title.
+ */
+function wendys_core_preprocess(&$variables) {
+  if (isset($variables['plugin_id']) &&
+    strpos($variables['plugin_id'], 'system_menu_block:') !== FALSE) {
+    foreach ($variables['content']['#items'] as $k => &$v) {
+      if (method_exists($v['original_link'], 'getUuid')) {
+        $id = $v['original_link']->getMetadata()['entity_id'];
+        $plugin_id_parts = explode(':', $v['original_link']->getPluginId());
+        $uuid = $plugin_id_parts[1];
+        $menu_content = current(\Drupal::entityManager()->getStorage('menu_link_content')->loadByProperties(['uuid' => $uuid]));
+
+        if ($menu_content->hasField('field_menu_mobile_link_title')) {
+          $mobile_title = $menu_content->get('field_menu_mobile_link_title')->value;
+          $variables['content']['#items'][$k]['mobile_title'] = $mobile_title;
+        }
+      }
+    }
+  }
+}
