@@ -1,19 +1,43 @@
 <?php
 
 /**
+ * @file
+ * Hook imeplementations for Wendy's main theme.
+ */
+
+/**
  * {@inheritdoc}
  */
 function wendys_main_preprocess(&$variables, $hook, $info) {
   if ($hook === 'eck_entity') {
     $bundle = $variables['bundle'];
     $entity = $variables['eck_entity'];
-    $class = array();
+    $class = [];x
     if (isset($variables['attributes']['class']) && is_array($variables['attributes']['class'])) {
       $class = $variables['attributes']['class'];
     }
 
     $class[] = 'brick';
     $class[] = 'brick-' . $bundle;
+
+    $variables['attributes']['class'] = $class;
+  }
+  elseif ($hook === 'media') {
+    $entity = $variables['elements']['#media'];
+    $field_name = 'field_mobile_image';
+
+    $class = [];
+    if (isset($variables['attributes']['class']) && is_array($variables['attributes']['class'])) {
+      $class = $variables['attributes']['class'];
+    }
+
+    if ($entity->hasField($field_name)) {
+      $field = $entity->get($field_name)->first();
+      if ($field) {
+        $field = $field->getValue();
+        $class = "has-mobile";
+      }
+    }
 
     $variables['attributes']['class'] = $class;
   }

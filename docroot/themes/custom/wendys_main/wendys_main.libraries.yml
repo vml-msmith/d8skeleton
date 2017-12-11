@@ -1,3 +1,9 @@
+wendys-hero:
+  version: 1.x
+  css:
+    layout:
+      dist/css/hero.css: {}
+
 wendys-global:
   version: 1.x
   css:
@@ -5,3 +11,5 @@ wendys-global:
       dist/css/main.css: {}
       dist/css/header.css: {}
       dist/css/footer.css: {}
+  dependencies:
+    - wendys_main/wendys-hero

@@ -1,0 +1,57 @@
+@charset 'UTF-8';
+
+@import '../common/colors';
+@import '../common/buttons';
+
+.brick-hero {
+  position: relative;
+
+  > .field,
+  .inner {
+    position: relative;
+  }
+
+  .field--name-field-hero-background {
+    height: 0;
+    position: initial;
+
+    .media--background {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover
+      ;
+      bottom: 0;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100%;
+    }
+  }
+
+
+  .inner {
+    padding: 38px 30px 83px;
+  }
+
+  .field--name-field-hero-copy {
+    color: $white;
+    font-family: IntroBold;
+    font-size: 5rem;
+    line-height: 7.2rem;
+    margin-bottom: 28px;
+    min-height: 1px;
+    position: relative;
+    text-align: center;
+    text-shadow: 0 6px 6px $hero-text-shadow;
+    text-transform: uppercase;
+    width: 100%;
+  }
+
+  .field--name-field-hero-cta {
+    a {
+      @include button-fill;
+    }
+  }
+}
