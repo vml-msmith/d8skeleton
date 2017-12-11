@@ -41,7 +41,9 @@ footer {
     display: none;
   }
 
-  .dropbutton-widget {
-    background: transparent;
+  .dropbutton-wrapper {
+    .dropbutton-widget {
+      background: transparent;
+    }
   }
 }

@@ -4,6 +4,7 @@
 @import '../common/gutters';
 @import '../common/images';
 @import '../common/fonts';
+@import '../common/breakpoint';
 
 header {
   background: $background-color-header;
@@ -15,12 +16,23 @@ header {
 }
 
 .region-top {
+  @include gutter-global;
   position: relative;
 }
 
 .region-top-top-menu {
   background: url($image-header-background) $white;
   border-bottom: $gray-border 2px solid;
+
+  @include breakpoint($tablet) {
+    background: transparent;
+  }
+}
+
+.region-top-menu {
+  @include breakpoint($tablet) {
+    background: url($image-header-background) $white;
+  }
 }
 
 // Logo
@@ -28,21 +40,42 @@ header {
   left: calc(100% * .083333);
   position: absolute;
   top: 5px;
+  z-index: 2;
+
+  @include breakpoint($tablet) {
+    left: 0;
+    top: 25px;
+  }
 
   img {
     height: 51px;
+
+    @include breakpoint($tablet) {
+      height: 76px;
+    }
   }
 }
 
 
 // Top Bar Menu.
 .menu--top-bar {
+  @include gutter-global;
+
+  // Explicitly set padding after gutter-global to override.
+  // Gutter-global is good for the desktop global gutters.
+  padding-left: 0;
+  padding-right: 0;
+
   > .menu {
     margin: 0;
     margin-top: 5px;
     padding-bottom: 8px;
     padding-right: 22px;
     text-align: right;
+
+    @include breakpoint($tablet) {
+      padding-right: 0;
+    }
   }
 
   li {
@@ -50,6 +83,10 @@ header {
     margin-bottom: 5px;
     margin-left: 15px;
     margin-top: 10px;
+
+    @include breakpoint($tablet) {
+      margin-left: 30px;
+    }
   }
 
   a {
@@ -59,6 +96,8 @@ header {
     font-weight: bold;
     padding-left: 9px;
     padding-right: 9px;
+    padding-top: 7px;
+    position: relative;
     text-decoration: none;
 
     &::before {
@@ -69,6 +108,12 @@ header {
       margin-left: auto;
       margin-right: auto;
       width: 25px;
+
+      @include breakpoint($tablet) {
+        left: -25px;
+        position: absolute;
+        top: 0;
+      }
     }
 
   }
@@ -76,12 +121,17 @@ header {
 
 // Main Menu.
 .menu--main {
-  @include gutter;
+  @include gutter-global;
 
-  .menu {
-    &.ul {
+  ul {
+    &.menu {
       display: flex;
       justify-content: space-between;
+
+      @include breakpoint($tablet) {
+        display: block;
+        text-align: right;
+      }
     }
   }
 
@@ -89,6 +139,29 @@ header {
     display: inline-block;
     font-size: 1.4rem;
 
+    @include breakpoint($tablet) {
+      margin-left: 50px;
+    }
+
+    @include breakpoint($tablet) {
+      .mobile {
+        display: block;
+      }
+
+      .default {
+        display: none;
+      }
+    }
+
+    @include breakpoint($desktop) {
+      .mobile {
+        display: none;
+      }
+
+      .default {
+        display: block;
+      }
+    }
 
     a {
       border-bottom: solid 4px $white;
@@ -100,6 +173,10 @@ header {
       padding: 17px 8px;
       text-align: center;
       text-decoration: none;
+
+      @include breakpoint($tablet) {
+        font-size: 2rem;
+      }
 
       &.is-active {
         border-color: $yellow;

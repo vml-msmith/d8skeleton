@@ -6,3 +6,31 @@
   padding-left: 8.33%;
   padding-right: 8.33%;
 }
+
+@mixin gutter-global {
+  @include gutter;
+
+  @include breakpoint(990px) {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 720px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  @include breakpoint($tablet) {
+    max-width: 960px;
+  }
+
+  @include breakpoint($desktop) {
+    max-width: 1140px;
+  }
+}
+
+@mixin gutter-brick {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1500px;
+  padding-left: 0;
+  padding-right: 0;
+}

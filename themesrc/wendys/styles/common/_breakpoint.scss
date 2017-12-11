@@ -1,7 +1,7 @@
 @charset 'UTF-8';
 
-$tablet: 600px;
-$desktop: 900px;
+$tablet: 768px;
+$desktop: 1200px;
 $large-desktop: 1500px;
 
 @mixin breakpoint($point) {
