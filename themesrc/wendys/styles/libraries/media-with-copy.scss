@@ -1,0 +1,101 @@
+@charset 'UTF-8';
+
+@import '../common/colors';
+@import '../common/buttons';
+@import '../common/breakpoint';
+@import '../common/gutters';
+
+
+.brick-media_with_copy {
+  position: relative;
+  color: $white;
+
+  > .field,
+  .inner {
+    position: relative;
+  }
+
+  .field--name-field-mediacopy-background-image {
+    position: initial;
+    height: 0;
+
+    .media--background {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      bottom: 0;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100%;
+    }
+
+    .field--name-field-mobile-image {
+      .media--background {
+        background-position: top;
+      }
+    }
+
+    .media {
+
+      &.has-mobile {
+        .field--name-field-image {
+          display: none;
+        }
+
+        @include breakpoint($tablet) {
+          .field--name-field-image {
+            display: block;
+          }
+          .field--name-field-mobile-image {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  .copy-box {
+    margin-top: 385px;
+    @include gutter;
+  }
+
+  .inner {
+    padding-bottom: 15px;
+  }
+
+  .field--name-field-mediacopy-eyebrow {
+    font-family: IntroBold;
+    padding-bottom: 5px;
+    font-size: 1.6rem;
+  }
+
+  .field--name-field-mediacopy-header {
+    margin: 0;
+    padding-left: 0;
+    font-family: IntroBold;
+    line-height: 5rem;
+    font-size: 3.6rem;
+  }
+
+  .field--name-field-mediacopy-copy {
+    margin-top: 16px;
+  }
+
+  .field--name-field-mediacopy-cta {
+    a {
+      @include button-fill;
+    }
+  }
+
+  .field--name-field-mediacopy-legal-line {
+    @include gutter;
+
+    font-size: 1.2rem;
+    font-family: WendysReg;
+    line-height: 1.7rem;
+    text-align: center;
+  }
+}

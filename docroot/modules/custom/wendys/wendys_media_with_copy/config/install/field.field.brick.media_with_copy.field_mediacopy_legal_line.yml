@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.brick.media_with_copy
+    - field.storage.brick.field_mediacopy_legal_line
+  module:
+    - text
+id: brick.media_with_copy.field_mediacopy_legal_line
+field_name: field_mediacopy_legal_line
+entity_type: brick
+bundle: media_with_copy
+label: 'Legal Line'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

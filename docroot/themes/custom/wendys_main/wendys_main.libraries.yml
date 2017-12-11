@@ -1,3 +1,9 @@
+wendys-media-with-copy:
+  version: 1.x
+  css:
+    layout:
+      dist/css/media-with-copy.css: {}
+
 wendys-hero:
   version: 1.x
   css:
@@ -13,3 +19,4 @@ wendys-global:
       dist/css/footer.css: {}
   dependencies:
     - wendys_main/wendys-hero
+    - wendys_main/wendys-media-with-copy
