@@ -12,7 +12,7 @@ function wendys_main_preprocess(&$variables, $hook, $info) {
   if ($hook === 'eck_entity') {
     $bundle = $variables['bundle'];
     $entity = $variables['eck_entity'];
-    $class = [];x
+    $class = [];
     if (isset($variables['attributes']['class']) && is_array($variables['attributes']['class'])) {
       $class = $variables['attributes']['class'];
     }
