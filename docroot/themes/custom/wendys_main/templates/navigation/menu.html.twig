@@ -43,13 +43,16 @@
           item.in_active_trail ? 'menu-item--active-trail',
         ]
       %}
-      <li{{ item.attributes.addClass(classes) }}>
-        {{ link(item.title, item.url, { 'class':['default']}) }}
-        {% if item.mobile_title %}
-          {{ link(item.mobile_title, item.url, { 'class':['mobile']}) }}
-        {% else %}
-          {{ link(item.title, item.url, { 'class':['mobile']}) }}
-        {% endif %}
+      <li{{ item.attributes.addClasxs(classes) }}>
+        <span class='default'>{{ link(item.title, item.url) }}</span>
+
+        <span class='mobile'>
+          {% if item.mobile_title %}
+          {{ link(item.mobile_title, item.url) }}
+          {% else %}
+          {{ link(item.title, item.url) }}
+          {% endif %}
+        </span>
         {% if item.below %}
           {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
         {% endif %}
