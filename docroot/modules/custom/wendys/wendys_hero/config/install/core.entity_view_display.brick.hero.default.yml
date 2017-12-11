@@ -1,0 +1,68 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.brick.hero
+    - field.field.brick.hero.field_hero_background
+    - field.field.brick.hero.field_hero_copy
+    - field.field.brick.hero.field_hero_cta
+  module:
+    - field_group
+    - link
+third_party_settings:
+  field_group:
+    group_inner:
+      children:
+        - field_hero_copy
+        - field_hero_cta
+      parent_name: ''
+      weight: 1
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: inner
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: inner
+      region: content
+id: brick.hero.default
+targetEntityType: brick
+bundle: hero
+mode: default
+content:
+  field_hero_background:
+    weight: 0
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_hero_copy:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_hero_cta:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden:
+  langcode: true
+  title: true
