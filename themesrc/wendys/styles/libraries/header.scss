@@ -3,6 +3,7 @@
 @import '../common/colors';
 @import '../common/gutters';
 @import '../common/images';
+@import '../common/fonts';
 
 header {
   background: $background-color-header;
@@ -22,6 +23,7 @@ header {
   border-bottom: $gray-border 2px solid;
 }
 
+// Logo
 .block-system-branding-block {
   left: calc(100% * .083333);
   position: absolute;
@@ -32,31 +34,76 @@ header {
   }
 }
 
+
+// Top Bar Menu.
 .menu--top-bar {
   > .menu {
     margin: 0;
+    margin-top: 5px;
     padding-bottom: 8px;
+    padding-right: 22px;
     text-align: right;
   }
 
   li {
     display: inline-block;
-    height: 51px;
+    margin-bottom: 5px;
+    margin-left: 15px;
+    margin-top: 10px;
+  }
+
+  a {
+    color: $dark-text;
+    display: block;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding-left: 9px;
+    padding-right: 9px;
+    text-decoration: none;
+
+    &::before {
+      background: $red;
+      content: ' ';
+      display: block;
+      height: 25px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 25px;
+    }
+
   }
 }
 
+// Main Menu.
 .menu--main {
   @include gutter;
+
+  .menu {
+    &.ul {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
 
   li {
     display: inline-block;
     font-size: 1.4rem;
-    padding: 17px 0;
+
 
     a {
+      border-bottom: solid 4px $white;
+      color: $dark-text;
+      display: block;
+      font-family: IntroBold;
+      font-size: 1.4rem;
       margin: auto 0;
+      padding: 17px 8px;
       text-align: center;
       text-decoration: none;
+
+      &.is-active {
+        border-color: $yellow;
+      }
     }
   }
 }

@@ -3,6 +3,7 @@
 @import '../common/colors';
 @import '../common/buttons';
 @import '../common/breakpoint';
+@import '../common/gutters';
 
 html {
   font-size: 62.5%;
@@ -27,7 +28,7 @@ main {
 }
 
 .block-menu {
-  .menu-item {
+  li {
 
     .default {
       display: none;
@@ -45,51 +46,8 @@ main {
   }
 }
 
-.brick-hero {
-  position: relative;
-
-  > .field,
-  .inner {
-    position: relative;
-  }
-
-  .field--name-field-hero-background {
-    position: initial;
-
-    .media--background {
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      bottom: 0;
-      height: 100%;
-      left: 0;
-      position: absolute;
-      right: 0;
-      top: 0;
-      width: 100%;
-    }
-  }
-
-
-  .inner {
-    padding: 50px 30px;
-  }
-
-  .field--name-field-hero-copy {
-    color: $white;
-    font-size: 50px;
-    margin-bottom: 20px;
-    min-height: 1px;
-    position: relative;
-    text-align: center;
-    text-shadow: 0 6px 6px $hero-text-shadow;
-    text-transform: uppercase;
-    width: 100%;
-  }
-
-  .field--name-field-hero-cta {
-    a {
-      @include button-fill;
-    }
-  }
+.text-formatted {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  margin-top: 16px;
 }
