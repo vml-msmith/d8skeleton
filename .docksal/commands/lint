@@ -23,6 +23,7 @@ fi
 JS=''
 PHP=''
 SCSS=''
+YML=''
 
 for I in $@
 do
@@ -47,6 +48,10 @@ do
     if [ "$extension" == "scss" ]; then
        SCSS="$SCSS $I"
     fi
+
+    if [ "$extension" == "yml" ]; then
+        YML="$YML $I"
+    fi
 done
 
 header "File Linter"
@@ -64,6 +69,18 @@ fi
 if [[ !  -z  $SCSS ]]; then
     echo "Lint via SCSS"
     #EXIT_CODE=$(($EXIT_CODE + $?))
+fi
+
+if [[ !  -z  $YML ]]; then
+    for I in $YML
+    do
+        line=$(head -n 1 $I)
+        array=( $line ) # do not use quotes in order to allow word expansion
+        if [ "${array[0]}" == "uuid:" ]; then
+          echo "ERROR: UUID in feature YML file: $I"
+          EXIT_CODE=$(($EXIT_CODE + 1))
+        fi;
+    done
 fi
 
 exit $EXIT_CODE
