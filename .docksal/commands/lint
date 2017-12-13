@@ -20,13 +20,51 @@ if [[ -z "$@" ]]; then
   exit 0;
 fi
 
+JS=''
+PHP=''
+SCSS=''
+
+for I in $@
+do
+    filename=$(basename "$I")
+    extension="${filename##*.}"
+    if [ "$extension" == "js" ]; then
+       JS="$JS $I"
+    fi
+
+    if [ "$extension" == "php" ]; then
+       PHP="$PHP $I"
+    fi
+
+    if [ "$extension" == "module" ]; then
+       PHP="$PHP $I"
+    fi
+
+    if [ "$extension" == "theme" ]; then
+       PHP="$PHP $I"
+    fi
+
+    if [ "$extension" == "scss" ]; then
+       SCSS="$SCSS $I"
+    fi
+done
+
 header "File Linter"
 
-fin eslint $@
-EXIT_CODE=$(($EXIT_CODE + $?)) 
+if [[ !  -z  $JS  ]]; then
+    fin eslint $JS
+    EXIT_CODE=$(($EXIT_CODE + $?))
+fi
 
-fin phpcs $@
-EXIT_CODE=$(($EXIT_CODE + $?)) 
+if [[ !  -z  $PHP ]]; then
+    fin phpcs $PHP
+    EXIT_CODE=$(($EXIT_CODE + $?))
+fi
+
+if [[ !  -z  $SCSS ]]; then
+    echo "Lint via SCSS"
+    #EXIT_CODE=$(($EXIT_CODE + $?))
+fi
 
 exit $EXIT_CODE
 
