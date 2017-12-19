@@ -16,7 +16,7 @@ var merge = require('merge-stream');
 var include = require('gulp-include');
 var Stream = require('stream');
 
-var CONFIGS = [require('./gulp.config.wendys.js')];
+var CONFIGS = [require('./gulp.config.js')];
 
 gulp.task('default', false, ['help']);
 
