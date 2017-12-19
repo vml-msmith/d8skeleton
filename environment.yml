@@ -41,7 +41,3 @@ frontend_builder:
   -
     name: themesrc
     path: themesrc
-    proc:
-      - npm
-      - gulp
-      - gulp-watch
