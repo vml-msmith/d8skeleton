@@ -20,16 +20,17 @@ header {
   position: relative;
 }
 
-.region-top-top-menu {
+.region-top-utility {
   background: url($image-header-background) $white;
   border-bottom: $gray-border 2px solid;
+  height: 61px;
 
   @include breakpoint($tablet) {
     background: transparent;
   }
 }
 
-.region-top-menu {
+.region-top-navigation {
   @include breakpoint($tablet) {
     background: url($image-header-background) $white;
   }
@@ -37,7 +38,7 @@ header {
 
 // Logo
 .block-system-branding-block {
-  left: calc(100% * .083333);
+  left: 23px;
   position: absolute;
   top: 5px;
   z-index: 2;
@@ -48,7 +49,7 @@ header {
   }
 
   img {
-    height: 51px;
+    height: 50px;
 
     @include breakpoint($tablet) {
       height: 76px;
@@ -58,7 +59,7 @@ header {
 
 
 // Top Bar Menu.
-.menu--top-bar {
+.menu--utility {
   @include gutter-global;
 
   // Explicitly set padding after gutter-global to override.
@@ -68,9 +69,7 @@ header {
 
   > .menu {
     margin: 0;
-    margin-top: 5px;
-    padding-bottom: 8px;
-    padding-right: 22px;
+    padding-right: 23px;
     text-align: right;
 
     @include breakpoint($tablet) {
@@ -82,32 +81,35 @@ header {
     display: inline-block;
     margin-bottom: 5px;
     margin-left: 15px;
-    margin-top: 10px;
 
     @include breakpoint($tablet) {
       margin-left: 30px;
     }
   }
 
+
   a {
     color: $dark-text;
     display: block;
-    font-size: 1.1rem;
+    font-family: $font-intro-bold;
+    font-size: 1.2rem;
     font-weight: bold;
     padding-left: 9px;
     padding-right: 9px;
-    padding-top: 7px;
+    padding-top: 15px;
+    padding-bottom: 3px;
     position: relative;
     text-decoration: none;
 
     &::before {
-      background: $red;
+      background-position: center;
       content: ' ';
       display: block;
-      height: 25px;
-      margin-left: auto;
-      margin-right: auto;
-      width: 25px;
+      height: 22px;
+      left: calc((100% / 2) - 14px);
+      position: relative;
+      top: -6px;
+      width: 28px;
 
       @include breakpoint($tablet) {
         left: -25px;
@@ -116,6 +118,14 @@ header {
       }
     }
 
+  }
+
+  li:last-child {
+    a {
+      background: $blue;
+      color: $white;
+      border-radius: 0 0 3px 3px;
+    }
   }
 }
 
@@ -132,54 +142,56 @@ header {
         display: block;
         text-align: right;
       }
-    }
-  }
 
-  li {
-    display: inline-block;
-    font-size: 1.4rem;
 
-    @include breakpoint($tablet) {
-      margin-left: 50px;
-    }
+      li {
+        display: inline-block;
+        font-size: 1.4rem;
 
-    @include breakpoint($tablet) {
-      .mobile {
-        display: block;
-      }
+        @include breakpoint($tablet) {
+          margin-left: 50px;
+        }
 
-      .default {
-        display: none;
-      }
-    }
+        @include breakpoint($tablet) {
+          .mobile {
+            display: block;
+          }
 
-    @include breakpoint($desktop) {
-      .mobile {
-        display: none;
-      }
+          .default {
+            display: none;
+          }
+        }
 
-      .default {
-        display: block;
-      }
-    }
+        @include breakpoint($desktop) {
+          .mobile {
+            display: none;
+          }
 
-    a {
-      border-bottom: solid 4px $white;
-      color: $dark-text;
-      display: block;
-      font-family: IntroBold;
-      font-size: 1.4rem;
-      margin: auto 0;
-      padding: 17px 8px;
-      text-align: center;
-      text-decoration: none;
+          .default {
+            display: block;
+          }
+        }
 
-      @include breakpoint($tablet) {
-        font-size: 2rem;
-      }
+        a {
+          border-bottom: solid 6px $white;
+          color: $dark-text;
+          display: block;
+          font-family: IntroBold;
+          font-size: 1.5rem;
+          margin: auto 0;
+          padding: 15px 8px 10px 8px;
+          text-align: center;
+          text-decoration: none;
 
-      &.is-active {
-        border-color: $yellow;
+          @include breakpoint($tablet) {
+            font-size: 2rem;
+          }
+
+          &.is-active {
+            border-color: $yellow;
+            color: $gray-light;
+          }
+        }
       }
     }
   }
