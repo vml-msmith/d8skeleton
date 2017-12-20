@@ -20,13 +20,68 @@ if [[ -z "$@" ]]; then
   exit 0;
 fi
 
+JS=''
+PHP=''
+SCSS=''
+YML=''
+
+for I in $@
+do
+    filename=$(basename "$I")
+    extension="${filename##*.}"
+    if [ "$extension" == "js" ]; then
+       JS="$JS $I"
+    fi
+
+    if [ "$extension" == "php" ]; then
+       PHP="$PHP $I"
+    fi
+
+    if [ "$extension" == "module" ]; then
+       PHP="$PHP $I"
+    fi
+
+    if [ "$extension" == "theme" ]; then
+       PHP="$PHP $I"
+    fi
+
+    if [ "$extension" == "scss" ]; then
+       SCSS="$SCSS $I"
+    fi
+
+    if [ "$extension" == "yml" ]; then
+        YML="$YML $I"
+    fi
+done
+
 header "File Linter"
 
-fin eslint $@
-EXIT_CODE=$(($EXIT_CODE + $?)) 
+if [[ !  -z  $JS  ]]; then
+    fin eslint $JS
+    EXIT_CODE=$(($EXIT_CODE + $?))
+fi
 
-fin phpcs $@
-EXIT_CODE=$(($EXIT_CODE + $?)) 
+if [[ !  -z  $PHP ]]; then
+    fin phpcs $PHP
+    EXIT_CODE=$(($EXIT_CODE + $?))
+fi
+
+if [[ !  -z  $SCSS ]]; then
+    echo "Lint via SCSS"
+    #EXIT_CODE=$(($EXIT_CODE + $?))
+fi
+
+if [[ !  -z  $YML ]]; then
+    for I in $YML
+    do
+        line=$(head -n 1 $I)
+        array=( $line ) # do not use quotes in order to allow word expansion
+        if [ "${array[0]}" == "uuid:" ]; then
+          echo "ERROR: UUID in feature YML file: $I"
+          EXIT_CODE=$(($EXIT_CODE + 1))
+        fi;
+    done
+fi
 
 exit $EXIT_CODE
 

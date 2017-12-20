@@ -1,9 +1,44 @@
 @charset 'UTF-8';
 
 @font-face {
-  font-family: 'IntroBold';
+  font-family: 'IntroBlack';
+  src: url('../fonts/introblack.woff2') format('woff2'),
+  url('../fonts/introblack.woff') format('woff');
+  font-weight: normal;
   font-style: normal;
-  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'IntroBold';
   src: url('../fonts/introbold.woff2') format('woff2'),
   url('../fonts/introbold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
+
+@font-face {
+  font-family: 'introbold_italic';
+  src: url('../font/introbolditalic.woff2') format('woff2'),
+  url('../font/introbolditalic.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'introbold_alt';
+  src: url('../font/introboldalt.woff2') format('woff2'),
+  url('../font/introboldalt.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'introbold_caps';
+  src: url('../font/introboldcaps.woff2') format('woff2'),
+  url('../font/introboldcaps.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$font-intro-black: 'IntroBlack';
+$font-intro-bold: 'IntroBold';

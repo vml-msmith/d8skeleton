@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file
+ * Hook implementations for VML bricks.
+ */
+
+/**
+ * Implements hook_theme_registry_alter().
+ *
+ * ECK and Bricks store their theme registry special for bricks. Make sure
+ * fields groups preprocessing gets added.
+ */
+function vml_bricks_theme_registry_alter(&$theme_registry) {
+  // ECK does not use the eck as theme function.
+  if (function_exists('field_group_build_entity_groups')) {
+    if (isset($theme_registry['eck_entity__brick'])) {
+      $theme_registry['eck_entity__brick']['preprocess functions'][] = 'field_group_build_entity_groups';
+    }
+  }
+}

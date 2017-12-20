@@ -58,6 +58,14 @@ done
 
 COUNT=$(fin exec yaml get environment.yml frontend_builder.length | tr -d '\r' | xargs)
 
+
+FILES=$(find docroot/modules/custom/. -name 'gulp.config.js')
+DIRS=" "
+for i in ${FILES}; do
+    DIR=$(dirname ${i})
+    DIRS="$DIRS $DIR"
+done
+
 for((i=0; i < $COUNT; ++i)); do
   cd $PROJECT_ROOT
   THEME_NAME=$(yaml_val frontend_builder.${i}.name)
@@ -67,10 +75,18 @@ for((i=0; i < $COUNT; ++i)); do
   if [ -n "$NAME" ] && [ "$NAME" != "$THEME_NAME" ]; then
     continue
   fi
-  
-  
-  subheader "Processing ${THEME_NAME}"
-  section=$THEME_NAME
+
+  DIRS="$THEME_PATH $DIRS"
+done
+
+THEME_PROC="npm gulp gulp-build"
+
+
+for THEME_PATH in ${DIRS}; do
+  cd $PROJECT_ROOT
+
+  subheader "Processing ${THEME_PATH}"
+  section=$THEME_PATH
   step=1
 
 

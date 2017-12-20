@@ -1,5 +1,7 @@
 @charset 'UTF-8';
 
+@import '../common/breakpoint';
+
 @mixin button-fill {
   background: $blue-light;
   border: 1px solid $blue-light;
@@ -22,6 +24,10 @@
   .disabled {
     background: $gray-secondary-light;
     border-color: $gray-secondary-light;
+  }
+
+  @include breakpoint($tablet) {
+    width:  360px;
   }
 }
 
