@@ -1,0 +1,48 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.video.field_media_in_library
+    - field.field.media.video.field_media_video_embed_field
+    - field.field.media.video.field_video_id
+    - media_entity.bundle.video
+  module:
+    - video_embed_field
+_core:
+  default_config_hash: lOC4Ig6xL2jjwpXeCXRP53UFotxkeHH0O345-W529xo
+id: media.video.default
+targetEntityType: media
+bundle: video
+mode: default
+content:
+  field_media_video_embed_field:
+    type: video_embed_field_video
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      responsive: true
+      width: 854
+      height: 480
+      autoplay: false
+    third_party_settings: {  }
+  field_video:
+    type: video_embed_field_video
+    weight: 3
+    label: hidden
+    settings:
+      responsive: true
+      width: 854
+      height: 480
+      autoplay: true
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  field_id: true
+  field_media_in_library: true
+  field_source: true
+  field_video_id: true
+  name: true
+  thumbnail: true
+  uid: true

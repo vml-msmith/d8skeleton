@@ -1,0 +1,52 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.media_library
+  module:
+    - views
+_core:
+  default_config_hash: XzwtY4E3RnKI6ytnnS0c9jc7svMEkE4s63-Xsf-2QDs
+name: media_browser
+label: 'Media Browser'
+display: modal
+display_configuration:
+  width: '650'
+  height: '500'
+  link_text: 'Select entities'
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  8c4769da-f07d-4f7a-9501-328fb8840fd7:
+    settings:
+      upload_location: 'public://'
+      multiple: true
+      submit_text: 'Select files'
+      extensions: 'jpg jpeg gif png txt doc xls pdf ppt pps odt ods odp'
+    uuid: ''
+    weight: -9
+    label: Upload
+    id: upload
+  19e688b0-95cf-4e70-987a-a8d5dacdbf36:
+    settings:
+      view: media_library
+      view_display: entity_browser_1
+      submit_text: null
+      auto_select: null
+    uuid: ''
+    weight: -8
+    label: ''
+    id: view
+  ee91eb9d-ac6e-4759-997b-d398054ddaf6:
+    settings:
+      view: media_library
+      view_display: entity_browser_1
+      submit_text: 'Select entities'
+      auto_select: false
+    uuid: ee91eb9d-ac6e-4759-997b-d398054ddaf6
+    weight: -10
+    label: View
+    id: view
