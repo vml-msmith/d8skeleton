@@ -3,20 +3,20 @@
 @import '../common/gutters';
 @import '../common/colors';
 
-.brick-product_slider {
+.brick--product-slider {
   .bg {
+    background-color: transparent;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
 
-    background-color: transparent;
     border-radius: 90px;
 
-    width: 89px;
     height: 89px;
     margin-left: auto;
     margin-right: auto;
-    opacity: 1.0;
+    opacity: 1;
+    width: 89px;
   }
 
   .tray {
@@ -26,19 +26,15 @@
   }
 
   .item {
-    /**/
     display: inline-block;
-    -webkit-flex-shrink: 0;
-    -ms-flex-shrink: 0;
     flex-shrink: 0;
-    padding: 30px 10px 30px 10px;
-    width: 89px;
+    padding: 30px 10px;
     text-align: center;
-    /**/
+    width: 89px;
 
     .label {
-      font-family: IntroBold;
       color: $dark-text;
+      font-family: IntroBold;
       font-size: 1.3rem;
     }
 

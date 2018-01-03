@@ -14,7 +14,7 @@ header {
   overflow: hidden;
   position: fixed;
   right: 0;
-  transition: all 0.75s ease;
+  transition: all .75s ease;
   z-index: 1;
 
   .site-name {
@@ -105,10 +105,10 @@ header {
     font-family: $font-intro-bold;
     font-size: 1.2rem;
     font-weight: bold;
+    padding-bottom: 3px;
     padding-left: 9px;
     padding-right: 9px;
     padding-top: 15px;
-    padding-bottom: 3px;
     position: relative;
     text-decoration: none;
 
@@ -134,8 +134,8 @@ header {
   li:last-child {
     a {
       background: $blue;
-      color: $white;
       border-radius: 0 0 3px 3px;
+      color: $white;
     }
   }
 }
@@ -190,7 +190,7 @@ header {
           font-family: IntroBold;
           font-size: 1.5rem;
           margin: auto 0;
-          padding: 15px 8px 10px 8px;
+          padding: 15px 8px 10px;
           text-align: center;
           text-decoration: none;
 

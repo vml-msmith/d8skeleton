@@ -18,8 +18,7 @@ function wendys_main_preprocess(&$variables, $hook, $info) {
     }
 
     $class[] = 'brick';
-    $class[] = 'brick-' . $bundle;
-
+    $class[] = 'brick--' . str_replace('_', '-', $bundle);
 
     $field_name = 'field_mediacopy_alignment';
 
