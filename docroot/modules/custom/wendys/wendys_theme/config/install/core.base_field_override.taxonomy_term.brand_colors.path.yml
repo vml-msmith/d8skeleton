@@ -1,0 +1,20 @@
+
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.brand_colors
+  module:
+    - path
+id: taxonomy_term.brand_colors.path
+field_name: path
+entity_type: taxonomy_term
+bundle: brand_colors
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

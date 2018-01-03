@@ -1,0 +1,33 @@
+
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.brand_colors.field_brandcolors_color
+    - taxonomy.vocabulary.brand_colors
+  module:
+    - text
+_core:
+  default_config_hash: 2P7V1H9aMsHkP0cvfj-K5nrSa9u55oKsq58_-pHAPjM
+id: taxonomy_term.brand_colors.default
+targetEntityType: taxonomy_term
+bundle: brand_colors
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_brandcolors_color:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  langcode: true

@@ -21,15 +21,35 @@ function wendys_core_entity_base_field_info(EntityTypeInterface $entity_type) {
       ->setLabel(t('Mobile menu link title'))
       ->setDescription(t('The text to be used for the mobile version of this link. Will use the Menu link title if left blank.'))
       ->setSetting('max_length', 255)
-      ->setDisplayOptions('view', [
-        'label' => 'hidden',
-        'type' => 'string',
-        'weight' => -5,
-      ])
-      ->setDisplayOptions('form', [
-        'type' => 'string_textfield',
-        'weight' => -5,
-      ])
+      ->setDisplayOptions('view',
+        [
+          'label' => 'hidden',
+          'type' => 'string',
+          'weight' => -5,
+        ])
+      ->setDisplayOptions('form',
+        [
+          'type' => 'string_textfield',
+          'weight' => -5,
+        ])
+      ->setDisplayConfigurable('form', TRUE);
+    $fields['field_menu_icon'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Icon'))
+      ->setDescription('<p>' . t('Select an icon to display before this item') . '</p>')
+      ->setSetting('target_type', 'taxonomy_term')
+      ->setSetting('handler_settings', ['target_bundles' => ['taxonomy_term' => 'menu_icons']])
+      ->setDisplayOptions('view',
+        [
+          'label'  => 'hidden',
+          'type'   => 'taxonomy_term',
+        ])
+      ->setDisplayOptions('form',
+        [
+          'type' => 'options_select',
+          'weight' => -4,
+
+        ])
+      ->setDisplayConfigurable('view', TRUE)
       ->setDisplayConfigurable('form', TRUE);
   }
 

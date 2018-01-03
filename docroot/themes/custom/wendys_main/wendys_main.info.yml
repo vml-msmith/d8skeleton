@@ -6,8 +6,8 @@ base theme: classy
 
 regions:
   top: 'Top Bar'
-  top_top_menu: 'Top Bar - Top Menu'
-  top_menu: 'Top Bar - Menu'
+  top_utility: 'Top Bar - Utility'
+  top_navigation: 'Top Bar - Navigation'
   highlighted: 'Highlighted'
   help: 'Help'
   content: 'Content'

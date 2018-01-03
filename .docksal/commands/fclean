@@ -1,0 +1,3 @@
+cd $PROJECT_ROOT
+
+find docroot/modules/custom -name "*.yml" -type f -exec sed -i '' -e 's/^uuid:.*//g' {} \;

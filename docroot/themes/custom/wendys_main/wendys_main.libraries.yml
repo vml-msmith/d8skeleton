@@ -1,3 +1,11 @@
+wendys-product-slider:
+  version: 1.x
+  css:
+    layout:
+      dist/css/product-slider.css: {}
+  js:
+    dist/js/product-slider.js: {}
+
 wendys-media-with-copy:
   version: 1.x
   css:
@@ -17,6 +25,10 @@ wendys-global:
       dist/css/main.css: {}
       dist/css/header.css: {}
       dist/css/footer.css: {}
+      /wendys_theme/custom/brand.css: {}
+  js:
+    dist/js/main.js: {}
   dependencies:
     - wendys_main/wendys-hero
     - wendys_main/wendys-media-with-copy
+    - wendys_main/wendys-product-slider

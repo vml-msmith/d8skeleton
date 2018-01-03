@@ -20,6 +20,17 @@ function wendys_main_preprocess(&$variables, $hook, $info) {
     $class[] = 'brick';
     $class[] = 'brick-' . $bundle;
 
+
+    $field_name = 'field_mediacopy_alignment';
+
+    if ($entity->hasField($field_name)) {
+      $field = $entity->get($field_name)->first();
+      if ($field) {
+        $field = $field->getValue();
+        $class[] = $field['value'];
+      }
+    }
+
     $variables['attributes']['class'] = $class;
   }
   elseif ($hook === 'media') {
@@ -35,7 +46,7 @@ function wendys_main_preprocess(&$variables, $hook, $info) {
       $field = $entity->get($field_name)->first();
       if ($field) {
         $field = $field->getValue();
-        $class = "has-mobile";
+        $class[] = "has-mobile";
       }
     }
 

@@ -1,0 +1,9 @@
+
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.brick
+name: 'Product Slider'
+type: product_slider
+description: ''

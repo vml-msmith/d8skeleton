@@ -9,9 +9,20 @@
 header {
   background: $background-color-header;
   color: $text-color-dark;
+  left: 0;
+  max-height: 120px;
+  overflow: hidden;
+  position: fixed;
+  right: 0;
+  transition: all 0.75s ease;
+  z-index: 1;
 
   .site-name {
     display: none;
+  }
+
+  &.closed {
+    max-height: 0;
   }
 }
 

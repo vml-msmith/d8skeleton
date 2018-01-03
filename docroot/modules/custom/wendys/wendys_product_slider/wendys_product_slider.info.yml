@@ -1,0 +1,7 @@
+name: 'Product Slider'
+type: module
+core: 8.x
+dependencies:
+  - eck
+  - vml_bricks
+package: 'Wendy''s'

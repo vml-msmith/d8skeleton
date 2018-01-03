@@ -5,7 +5,6 @@
 @import '../common/breakpoint';
 @import '../common/gutters';
 
-
 .brick-media_with_copy {
   position: relative;
   color: $white;
@@ -58,12 +57,25 @@
   }
 
   .copy-box {
-    margin-top: 385px;
-    @include gutter;
+    margin-top: calc(100% * 1.2);
+
+    @include breakpoint($tablet) {
+      margin-top: 97px;
+      max-width: 500px;
+    }
+  }
+
+  &.media-left {
+    .copy-box {
+      @include breakpoint($tablet) {
+        margin-left: auto;
+      }
+    }
   }
 
   .inner {
-    padding-bottom: 15px;
+    @include gutter;
+    padding-bottom: 55px;
   }
 
   .field--name-field-mediacopy-eyebrow {
@@ -78,6 +90,10 @@
     font-family: IntroBold;
     line-height: 5rem;
     font-size: 3.6rem;
+
+    @include breakpoint($tablet) {
+      font-size: 4.8rem;
+    }
   }
 
   .field--name-field-mediacopy-copy {
@@ -97,5 +113,23 @@
     font-family: WendysReg;
     line-height: 1.7rem;
     text-align: center;
+
+    @include breakpoint($tablet) {
+      padding-top: 100px;
+      text-align: left;
+      max-width: 500px;
+      margin-left: 0;
+    }
   }
+
+  &.media-left {
+    .field--name-field-mediacopy-legal-line {
+      @include breakpoint($tablet) {
+        margin-left: auto;
+        margin-right: 0;
+      }
+    }
+  }
+
+
 }

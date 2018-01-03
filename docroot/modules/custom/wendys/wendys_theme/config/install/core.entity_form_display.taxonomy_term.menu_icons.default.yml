@@ -1,0 +1,33 @@
+
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.menu_icons.field_icon
+    - taxonomy.vocabulary.menu_icons
+  module:
+    - file
+id: taxonomy_term.menu_icons.default
+targetEntityType: taxonomy_term
+bundle: menu_icons
+mode: default
+content:
+  field_icon:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  description: true
+  langcode: true
+  path: true

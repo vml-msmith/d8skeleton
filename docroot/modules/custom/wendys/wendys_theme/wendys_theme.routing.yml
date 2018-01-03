@@ -1,0 +1,6 @@
+example.name:
+  path: '/wendys_theme/custom/brand.css'
+  defaults:
+    _controller: '\Drupal\wendys_theme\Controller\BrandCssController::content'
+  requirements:
+    _permission: 'access content'
