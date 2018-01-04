@@ -1,0 +1,30 @@
+uuid: cda7babe-b471-4222-abfa-681f4e3f6eb6
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.brick.media_with_copy
+    - field.storage.brick.field_mediacopy_media
+    - media_entity.bundle.image
+_core:
+  default_config_hash: hihFNzpb-KucXWwykqEaOnGlPwHQzNZUp8e4jDZiHyI
+id: brick.media_with_copy.field_mediacopy_media
+field_name: field_mediacopy_media
+entity_type: brick
+bundle: media_with_copy
+label: Media
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

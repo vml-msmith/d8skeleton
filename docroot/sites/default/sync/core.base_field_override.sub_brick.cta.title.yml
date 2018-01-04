@@ -1,0 +1,18 @@
+uuid: abf4c1ee-95e6-498a-93b6-edceb95b964f
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.sub_brick.cta
+id: sub_brick.cta.title
+field_name: title
+entity_type: sub_brick
+bundle: cta
+label: Title
+description: 'The title of the entity.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

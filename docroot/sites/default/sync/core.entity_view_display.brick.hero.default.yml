@@ -1,0 +1,77 @@
+uuid: 3fce2f61-9878-467e-8f0f-030073ecf770
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.brick.hero
+    - field.field.brick.hero.field_hero_background
+    - field.field.brick.hero.field_hero_copy
+    - field.field.brick.hero.field_hero_ctas
+    - field.field.brick.hero.field_hero_hover_background
+  module:
+    - bricks
+    - field_group
+third_party_settings:
+  field_group:
+    group_inner:
+      children:
+        - field_hero_copy
+        - field_hero_ctas
+      parent_name: ''
+      weight: 2
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: inner
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: inner
+      region: content
+_core:
+  default_config_hash: BsWu3R5Ji1411ZCL35hdO8uZ5qWunzHKVvnNMq3C4j4
+id: brick.hero.default
+targetEntityType: brick
+bundle: hero
+mode: default
+content:
+  field_hero_background:
+    weight: 0
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_hero_copy:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_hero_ctas:
+    weight: 3
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    type: bricks_nested
+    region: content
+  field_hero_hover_background:
+    weight: 1
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  langcode: true
+  title: true

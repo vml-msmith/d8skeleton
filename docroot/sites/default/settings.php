@@ -245,6 +245,7 @@
  * @endcode
  */
 $config_directories = array();
+$config_directories[CONFIG_SYNC_DIRECTORY] = 'sites/default/sync';
 
 /**
  * Settings:
@@ -749,9 +750,7 @@ $settings['file_scan_ignore_directories'] = [
  *
  * Keep this code block at the end of this file to take full effect.
  */
-# if (file_exists(__DIR__ . '/settings.local.php')) {
-#   include __DIR__ . '/settings.local.php';
-# }
+
 $databases['default']['default'] = array (
   'database' => 'default',
   'username' => 'user',
@@ -763,4 +762,7 @@ $databases['default']['default'] = array (
   'driver' => 'mysql',
 );
 $settings['install_profile'] = 'standard';
-$config_directories['sync'] = 'sites/default/files/config__zhHXRA3fd5ja2YqRXMrpibnrhKg4G5wjvYYxnihmwafs2kM0YXFu30vh-nNOrTVWCLJkwsTSA/sync';
+
+if (file_exists(__DIR__ . '/settings.local.php')) {
+  include __DIR__ . '/settings.local.php';
+}

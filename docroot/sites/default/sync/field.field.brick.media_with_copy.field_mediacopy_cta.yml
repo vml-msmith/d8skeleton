@@ -1,0 +1,25 @@
+uuid: 72bd64ff-b566-4085-95f0-e0b694cead5c
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.brick.media_with_copy
+    - field.storage.brick.field_mediacopy_cta
+  module:
+    - link
+_core:
+  default_config_hash: kHAE11x9-dMH1Jthj786da542L0I6M3NACS4k2cgwRg
+id: brick.media_with_copy.field_mediacopy_cta
+field_name: field_mediacopy_cta
+entity_type: brick
+bundle: media_with_copy
+label: CTA
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

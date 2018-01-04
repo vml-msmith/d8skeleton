@@ -1,0 +1,12 @@
+uuid: 7884a713-15dc-4ad6-9788-ab0a4ff31765
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: h_I3npxbVhKw0SLUTD3llemQFC-e_tjjMnANi2sw0jA
+id: sub_brick
+label: Sub-Brick
+created: false
+changed: false
+uid: false
+title: true

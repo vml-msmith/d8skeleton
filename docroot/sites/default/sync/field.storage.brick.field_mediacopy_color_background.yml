@@ -1,0 +1,21 @@
+uuid: 688ef82d-2ac0-48cf-9ad7-160a92310ee4
+langcode: en
+status: true
+dependencies:
+  module:
+    - bricks
+    - eck
+    - taxonomy
+id: brick.field_mediacopy_color_background
+field_name: field_mediacopy_color_background
+entity_type: brick
+type: bricks
+settings:
+  target_type: taxonomy_term
+module: bricks
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

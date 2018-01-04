@@ -1,0 +1,10 @@
+cookies:
+  js:
+    /libraries/cookies/cookies.js: {}
+
+wendys.authentication:
+  version: 1.x
+  js:
+    js/authentication.js: {}
+  dependencies:
+    - wendys_core/cookies

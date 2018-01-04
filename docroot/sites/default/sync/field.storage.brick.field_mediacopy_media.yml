@@ -1,0 +1,22 @@
+uuid: 2fd593fd-a2f1-4cf4-aa86-ff99515f6bd7
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - media_entity
+_core:
+  default_config_hash: Hz9lPWw76BnkKSqUs85JD5YIbmwIlkncvTZsFOuu8mY
+id: brick.field_mediacopy_media
+field_name: field_mediacopy_media
+entity_type: brick
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

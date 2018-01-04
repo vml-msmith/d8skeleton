@@ -1,0 +1,22 @@
+uuid: 95e462e4-04c4-4a9a-9800-4329721ad6ac
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - wendys_main
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: wendys_main_content
+theme: wendys_main
+region: content
+weight: -2
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,30 @@
+uuid: 64a3ee3c-fc7f-4241-a2f9-22dcd86bf8e6
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - options
+id: sub_brick.field_cta_theme
+field_name: field_cta_theme
+entity_type: sub_brick
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: button
+      label: 'Solid Button'
+    -
+      value: button.transparent
+      label: 'Transparent Button'
+    -
+      value: text-link
+      label: 'Text Link'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

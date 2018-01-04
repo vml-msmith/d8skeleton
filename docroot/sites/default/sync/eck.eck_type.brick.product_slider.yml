@@ -1,0 +1,11 @@
+uuid: 54e4ca86-0caa-4d53-98ca-99cf1c1c7f20
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.brick
+_core:
+  default_config_hash: 2J35VlK5TYrHaj47gWxNFUrwX1vuQIfprxcmUcr3JwE
+name: 'Product Slider'
+type: product_slider
+description: ''

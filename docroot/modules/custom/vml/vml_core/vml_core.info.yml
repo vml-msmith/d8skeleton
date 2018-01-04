@@ -1,5 +1,0 @@
-name: 'VML Core'
-type: module
-core: 8.x
-dependencies:
-  - features

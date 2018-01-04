@@ -1,0 +1,31 @@
+uuid: 25cfd0b5-7417-45ad-878c-15ca000e7d0f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.menu_icons.field_icon
+    - taxonomy.vocabulary.menu_icons
+  module:
+    - file
+    - text
+id: taxonomy_term.menu_icons.default
+targetEntityType: taxonomy_term
+bundle: menu_icons
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_icon:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: file_default
+    region: content
+hidden:
+  langcode: true

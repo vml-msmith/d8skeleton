@@ -1,0 +1,22 @@
+uuid: 84150dd6-da6c-4d84-9cc2-cf31a9ad0c5b
+langcode: en
+status: true
+dependencies:
+  theme:
+    - wendys_main
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: wendys_main_local_tasks
+theme: wendys_main
+region: content
+weight: -4
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

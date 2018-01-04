@@ -1,0 +1,23 @@
+uuid: df19e6e6-017f-48cc-92a6-cea3aceca1d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.brick.media_with_copy
+    - field.storage.brick.field_mediacopy_legal_line
+  module:
+    - text
+_core:
+  default_config_hash: VplQ_t1PQyJSwx7AZ0uySlY2DOt5GAD3bYM4BJ_rrJU
+id: brick.media_with_copy.field_mediacopy_legal_line
+field_name: field_mediacopy_legal_line
+entity_type: brick
+bundle: media_with_copy
+label: 'Legal Line'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

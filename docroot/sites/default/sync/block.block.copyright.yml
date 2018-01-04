@@ -1,0 +1,25 @@
+uuid: 5232c47a-dfe6-403c-ae8a-109ef9c296c6
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:6b68d138-bf92-4caf-8046-08c525345715'
+  module:
+    - block_content
+  theme:
+    - wendys_main
+id: copyright
+theme: wendys_main
+region: footer_bottom
+weight: -3
+provider: null
+plugin: 'block_content:6b68d138-bf92-4caf-8046-08c525345715'
+settings:
+  id: 'block_content:6b68d138-bf92-4caf-8046-08c525345715'
+  label: Copyright
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

@@ -1,0 +1,19 @@
+uuid: f113da78-6ddc-49a7-bc56-c72acd449628
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.brick.product_slider
+id: brick.product_slider.default
+targetEntityType: brick
+bundle: product_slider
+mode: default
+content:
+  product_slider:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true
+  title: true

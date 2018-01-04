@@ -1,0 +1,16 @@
+uuid: fa49dc0f-a2ea-4a7f-b49a-2f9e483fd997
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.sub_brick.cta
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: sub_brick.cta
+target_entity_type_id: sub_brick
+target_bundle: cta
+default_langcode: site_default
+language_alterable: true

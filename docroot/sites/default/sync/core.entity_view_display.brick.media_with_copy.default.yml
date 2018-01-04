@@ -1,0 +1,132 @@
+uuid: 8c5593cd-ee92-47bc-b08d-fea0508f742f
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.brick.media_with_copy
+    - field.field.brick.media_with_copy.field_mediacopy_alignment
+    - field.field.brick.media_with_copy.field_mediacopy_background_image
+    - field.field.brick.media_with_copy.field_mediacopy_color_background
+    - field.field.brick.media_with_copy.field_mediacopy_copy
+    - field.field.brick.media_with_copy.field_mediacopy_cta
+    - field.field.brick.media_with_copy.field_mediacopy_eyebrow
+    - field.field.brick.media_with_copy.field_mediacopy_header
+    - field.field.brick.media_with_copy.field_mediacopy_legal_line
+    - field.field.brick.media_with_copy.field_mediacopy_media
+  module:
+    - field_group
+    - link
+    - text
+third_party_settings:
+  field_group:
+    group_inner:
+      children:
+        - field_mediacopy_media
+        - group_copy_box
+        - field_mediacopy_legal_line
+      parent_name: ''
+      weight: 1
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: inner
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: inner
+      region: content
+    group_copy_box:
+      children:
+        - field_mediacopy_eyebrow
+        - field_mediacopy_header
+        - field_mediacopy_copy
+        - field_mediacopy_cta
+      parent_name: group_inner
+      weight: 2
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: copy-box
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'copy box'
+      region: content
+_core:
+  default_config_hash: YC4TEK0uM5yP_6DK5atsnTCEt3tLJH_ZC3dOgQe-eaM
+id: brick.media_with_copy.default
+targetEntityType: brick
+bundle: media_with_copy
+mode: default
+content:
+  field_mediacopy_background_image:
+    weight: 0
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_mediacopy_copy:
+    weight: 8
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_mediacopy_cta:
+    weight: 9
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_mediacopy_eyebrow:
+    weight: 6
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_mediacopy_header:
+    weight: 7
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_mediacopy_legal_line:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_mediacopy_media:
+    weight: 1
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+hidden:
+  field_mediacopy_alignment: true
+  field_mediacopy_color_background: true
+  langcode: true
+  title: true

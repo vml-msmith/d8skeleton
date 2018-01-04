@@ -1,0 +1,30 @@
+uuid: 6573b713-38a2-4b1d-8c68-109dcbee9c12
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.brick.hero
+    - eck.eck_type.sub_brick.cta
+    - field.storage.brick.field_hero_ctas
+  module:
+    - bricks
+id: brick.hero.field_hero_ctas
+field_name: field_hero_ctas
+entity_type: brick
+bundle: hero
+label: CTAs
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:sub_brick'
+  handler_settings:
+    target_bundles:
+      cta: cta
+    sort:
+      field: _none
+    auto_create: 0
+    auto_create_bundle: ''
+field_type: bricks

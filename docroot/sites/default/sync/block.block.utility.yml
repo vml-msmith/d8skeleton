@@ -1,0 +1,24 @@
+uuid: 5a8e19f4-9c8a-4029-b44e-3786150e499a
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.utility
+  module:
+    - system
+  theme:
+    - wendys_main
+id: utility
+theme: wendys_main
+region: top_utility
+weight: 0
+provider: null
+plugin: 'system_menu_block:utility'
+settings:
+  id: 'system_menu_block:utility'
+  label: Utility
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility: {  }

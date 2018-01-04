@@ -1,0 +1,16 @@
+uuid: 39742940-fc5c-4381-a4da-3bbb67d26fd4
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.brick.media_with_copy
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: brick.media_with_copy
+target_entity_type_id: brick
+target_bundle: media_with_copy
+default_langcode: site_default
+language_alterable: true

@@ -1,0 +1,28 @@
+uuid: 1a150d7b-948f-466d-8252-a969a3e986a6
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.brick.hero
+    - field.storage.brick.field_hero_hover_background
+    - media_entity.bundle.image
+id: brick.hero.field_hero_hover_background
+field_name: field_hero_hover_background
+entity_type: brick
+bundle: hero
+label: 'Hover Background'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

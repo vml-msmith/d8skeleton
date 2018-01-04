@@ -1,0 +1,22 @@
+uuid: 7b8c0dc3-dc06-4aff-b6af-92a279e50de9
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - wendys_main
+_core:
+  default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
+id: wendys_main_help
+theme: wendys_main
+region: help
+weight: -4
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,16 @@
+uuid: ba374cd3-6ef5-49f7-ab85-2ea6436941b3
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.brick.hero
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: brick.hero
+target_entity_type_id: brick
+target_bundle: hero
+default_langcode: site_default
+language_alterable: true

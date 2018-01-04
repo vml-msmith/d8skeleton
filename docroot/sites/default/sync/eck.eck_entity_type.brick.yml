@@ -1,0 +1,12 @@
+uuid: b72088f6-8aac-4db9-952b-84959ee1f6b5
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: I5U8cI3szNmb0miZu1QfUui4kdDBjaODPdVZJFm7h24
+id: brick
+label: Brick
+created: false
+changed: false
+uid: false
+title: true

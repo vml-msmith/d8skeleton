@@ -1,0 +1,23 @@
+uuid: ec7737e0-82e6-458b-9d36-8fcc5c2781be
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.sub_brick.cta
+    - field.storage.sub_brick.field_cta_theme
+  module:
+    - options
+id: sub_brick.cta.field_cta_theme
+field_name: field_cta_theme
+entity_type: sub_brick
+bundle: cta
+label: Theme
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: button
+default_value_callback: ''
+settings: {  }
+field_type: list_string

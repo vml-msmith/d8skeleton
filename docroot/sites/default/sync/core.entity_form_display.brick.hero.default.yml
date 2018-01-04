@@ -1,0 +1,100 @@
+uuid: ea939cc0-4363-4c46-bc99-97cbc8264e62
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.brick.hero
+    - field.field.brick.hero.field_hero_background
+    - field.field.brick.hero.field_hero_copy
+    - field.field.brick.hero.field_hero_ctas
+    - field.field.brick.hero.field_hero_hover_background
+  module:
+    - entity_browser_entity_form
+    - inline_entity_form
+_core:
+  default_config_hash: '-Go8T-UNLKAK7kfdxg6-UR901fL_0rPrTAAjpxWqMAo'
+id: brick.hero.default
+targetEntityType: brick
+bundle: hero
+mode: default
+content:
+  field_hero_background:
+    weight: 2
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+      collapsible: false
+      collapsed: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: media_browser
+    type: inline_entity_form_complex
+    region: content
+  field_hero_copy:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_hero_ctas:
+    weight: 5
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      match_operator: CONTAINS
+      override_labels: false
+      collapsible: false
+      collapsed: false
+      allow_existing: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: _none
+    type: inline_entity_form_complex
+    region: content
+  field_hero_hover_background:
+    weight: 3
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+      collapsible: false
+      collapsed: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: media_browser
+    type: inline_entity_form_complex
+    region: content
+  langcode:
+    type: language_select
+    weight: 1
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

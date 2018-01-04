@@ -1,0 +1,27 @@
+uuid: 392520b0-93d2-4081-9672-86e291ed9e97
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - options
+id: brick.field_mediacopy_alignment
+field_name: field_mediacopy_alignment
+entity_type: brick
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: media-left
+      label: 'Media Left/Copy Right'
+    -
+      value: media-right
+      label: 'Media Right/Copy Left'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

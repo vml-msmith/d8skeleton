@@ -62,7 +62,7 @@ function wendys_core_entity_base_field_info(EntityTypeInterface $entity_type) {
  * Display custom fields on menus:
  *  - Mobile Link Title.
  */
-function wendys_core_preprocess(&$variables) {
+function wendys_core_preprocess(&$variables, $hook) {
   if (isset($variables['plugin_id']) &&
     strpos($variables['plugin_id'], 'system_menu_block:') !== FALSE) {
     foreach ($variables['content']['#items'] as $k => &$v) {
@@ -79,4 +79,53 @@ function wendys_core_preprocess(&$variables) {
       }
     }
   }
+}
+
+/**
+ * Implements hook_page_attachments()
+ */
+function wendys_core_page_attachments(array &$page) {
+  $page['#attached']['library'][] = 'wendys_core/wendys.authentication';
+}
+
+/**
+ * Implements hook_tokens().
+ */
+function wendys_core_tokens($type, $tokens, array $data, array $options, BubbleableMetadata $bubbleable_metadata) {
+  $token_service = \Drupal::token();
+
+  $replacements = [];
+
+  if ($type == 'wendys') {
+    foreach ($tokens as $name => $original) {
+      switch ($name) {
+        case 'account_name':
+          $replacements[$original] = Markup::create('<span data-replace="account-name" class="account-name"></span>');
+          break;
+      }
+    }
+  }
+  return $replacements;
+}
+
+/**
+ * Implements hook_token_info().
+ */
+function wendys_core_token_info() {
+  $types['wendys'] = [
+    'name' => t("Spire"),
+    'description' => t("Custom token type defined for sitewide Wendy's use."),
+  ];
+
+  $mytoken['account_name'] = [
+    'name' => t("Account Name"),
+    'description' => t("Account name when signed in."),
+  ];
+
+  return [
+    'types' => $types,
+    'tokens' => [
+      'wendys' => $mytoken,
+    ],
+  ];
 }

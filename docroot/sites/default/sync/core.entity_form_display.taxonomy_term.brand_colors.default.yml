@@ -1,0 +1,34 @@
+uuid: 62040f89-93ba-4148-9fda-1f8db9f95af7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.brand_colors.field_brandcolors_color
+    - taxonomy.vocabulary.brand_colors
+_core:
+  default_config_hash: mE6FuuFmhciAqGeXu8Lj7GfNpEEzfrAMqMqXBXsX1Fk
+id: taxonomy_term.brand_colors.default
+targetEntityType: taxonomy_term
+bundle: brand_colors
+mode: default
+content:
+  field_brandcolors_color:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  description: true
+  langcode: true
+  path: true

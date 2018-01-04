@@ -1,0 +1,21 @@
+uuid: 0805d3c5-5873-4dd1-8229-cbd4b5675eca
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - link
+_core:
+  default_config_hash: buhoyI-FEt2gaYgAd0TkCpO8_huxJKzve4JT6cHhk5U
+id: brick.field_mediacopy_cta
+field_name: field_mediacopy_cta
+entity_type: brick
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

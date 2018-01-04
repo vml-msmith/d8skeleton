@@ -1,0 +1,21 @@
+uuid: 36859372-62c2-48a7-9222-91b951bc239c
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.brick.media_with_copy
+    - field.storage.brick.field_mediacopy_eyebrow
+_core:
+  default_config_hash: Y4Pl2Q-u2_Qv12XA06yq4AKdIH4Ej70v2cRsBAJDu4I
+id: brick.media_with_copy.field_mediacopy_eyebrow
+field_name: field_mediacopy_eyebrow
+entity_type: brick
+bundle: media_with_copy
+label: Eyebrow
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

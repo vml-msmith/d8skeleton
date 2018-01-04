@@ -1,0 +1,22 @@
+uuid: 288f5370-5c45-4b74-8d42-ba921c244800
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - text
+_core:
+  default_config_hash: vLOdgrlax0q4vcqUIf6Pv-XryGcSGS6sNC1ef_AkfYQ
+id: brick.field_mediacopy_legal_line
+field_name: field_mediacopy_legal_line
+entity_type: brick
+type: text
+settings:
+  max_length: 255
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,16 @@
+uuid: ac589da7-2fe7-4fe0-bf2c-4970ce183da7
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.brick.product_slider
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: brick.product_slider
+target_entity_type_id: brick
+target_bundle: product_slider
+default_langcode: site_default
+language_alterable: true

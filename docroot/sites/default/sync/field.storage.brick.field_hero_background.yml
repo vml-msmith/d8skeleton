@@ -1,0 +1,22 @@
+uuid: 1a1ef9d0-0a9e-4196-bc2b-e40927232280
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - media_entity
+_core:
+  default_config_hash: _h2U135Xw7yycdRiWw4yo7udbx8B9k7wJ0bf9KEpN0A
+id: brick.field_hero_background
+field_name: field_hero_background
+entity_type: brick
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

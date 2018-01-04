@@ -1,0 +1,22 @@
+uuid: c723aaa1-4b82-405b-959e-58a86619562d
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - wendys_main
+_core:
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: wendys_main_messages
+theme: wendys_main
+region: highlighted
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

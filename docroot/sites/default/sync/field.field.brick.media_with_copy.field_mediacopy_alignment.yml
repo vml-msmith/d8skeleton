@@ -1,0 +1,23 @@
+uuid: 6cee9b96-7d15-467e-8ca9-5c9439703998
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.brick.media_with_copy
+    - field.storage.brick.field_mediacopy_alignment
+  module:
+    - options
+id: brick.media_with_copy.field_mediacopy_alignment
+field_name: field_mediacopy_alignment
+entity_type: brick
+bundle: media_with_copy
+label: Alignment
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: media-left
+default_value_callback: ''
+settings: {  }
+field_type: list_string

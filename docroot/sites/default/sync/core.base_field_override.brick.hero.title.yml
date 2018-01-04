@@ -1,0 +1,18 @@
+uuid: 262b7d12-c964-4680-b678-d77a5d82a63a
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.brick.hero
+id: brick.hero.title
+field_name: title
+entity_type: brick
+bundle: hero
+label: Title
+description: 'The title of the entity.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

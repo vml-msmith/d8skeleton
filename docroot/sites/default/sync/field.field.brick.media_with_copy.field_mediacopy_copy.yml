@@ -1,0 +1,23 @@
+uuid: 3ae50532-19a3-4d0b-9048-ad8ef05312d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.brick.media_with_copy
+    - field.storage.brick.field_mediacopy_copy
+  module:
+    - text
+_core:
+  default_config_hash: kB-FuV3MlWsk91qbQ8BexySA4pUxAQQjpKUF_RreR9U
+id: brick.media_with_copy.field_mediacopy_copy
+field_name: field_mediacopy_copy
+entity_type: brick
+bundle: media_with_copy
+label: Copy
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

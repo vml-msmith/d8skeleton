@@ -1,0 +1,11 @@
+uuid: 68daa0b3-5094-477c-87a6-67785d4423a3
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: litJ1iIfsUVQJGbuS1Au9V1E-db_pgpwLLsHgj43jOw
+name: 'Brand Colors'
+vid: brand_colors
+description: ''
+hierarchy: 0
+weight: 0

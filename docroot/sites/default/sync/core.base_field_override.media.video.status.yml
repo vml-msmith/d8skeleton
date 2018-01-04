@@ -1,0 +1,22 @@
+uuid: 33a90ac5-6540-419a-bc44-74d9de84b1b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - media_entity.bundle.video
+id: media.video.status
+field_name: status
+entity_type: media
+bundle: video
+label: 'Publishing status'
+description: 'A boolean indicating whether the media is published.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

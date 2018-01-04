@@ -1,0 +1,23 @@
+uuid: 11a91b8f-b7be-4856-b0fa-ef1069daf7ce
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+_core:
+  default_config_hash: xtZ-hnQIYv-7by08p1nj_0WPw-TJly8nz6i_ns-tTv4
+id: brick.field_mediacopy_header
+field_name: field_mediacopy_header
+entity_type: brick
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

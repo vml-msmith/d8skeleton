@@ -1,0 +1,135 @@
+uuid: 0289133b-2f24-42c2-86b2-aa9bf47c1073
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.image.field_image
+    - field.field.media.image.field_media_in_library
+    - field.field.media.image.field_mobile_image
+    - media_entity.bundle.image
+  module:
+    - blazy
+_core:
+  default_config_hash: 2S9Bj0U5Iy2T5W56GsGn9XPsruXuyq-l2vv7_t0igcY
+id: media.image.default
+targetEntityType: media
+bundle: image
+mode: default
+content:
+  field_image:
+    type: blazy_file
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      image_style: ''
+      thumbnail_style: ''
+      media_switch: ''
+      background: true
+      view_mode: default
+      ratio: ''
+      iframe_lazy: true
+      caption:
+        title: title
+        alt: alt
+      sizes: ''
+      breakpoints:
+        xs:
+          image_style: ''
+          width: ''
+          breakpoint: ''
+        sm:
+          image_style: ''
+          width: ''
+          breakpoint: ''
+        md:
+          image_style: ''
+          width: ''
+          breakpoint: ''
+        lg:
+          image_style: ''
+          width: ''
+          breakpoint: ''
+        xl:
+          image_style: ''
+          width: ''
+          breakpoint: ''
+      current_view_mode: default
+      icon: ''
+      layout: ''
+      cache: 0
+      optionset: default
+      skin: ''
+      style: ''
+      box_caption: ''
+      box_caption_custom: ''
+      box_style: ''
+      box_media_style: ''
+      responsive_image_style: ''
+      grid: 0
+      grid_header: ''
+      grid_medium: 0
+      grid_small: 0
+    third_party_settings: {  }
+  field_mobile_image:
+    weight: 1
+    label: hidden
+    settings:
+      image_style: ''
+      thumbnail_style: ''
+      media_switch: ''
+      background: true
+      view_mode: default
+      ratio: ''
+      iframe_lazy: true
+      caption:
+        title: title
+        alt: alt
+      sizes: ''
+      breakpoints:
+        xs:
+          image_style: ''
+          width: ''
+          breakpoint: ''
+        sm:
+          image_style: ''
+          width: ''
+          breakpoint: ''
+        md:
+          image_style: ''
+          width: ''
+          breakpoint: ''
+        lg:
+          image_style: ''
+          width: ''
+          breakpoint: ''
+        xl:
+          image_style: ''
+          width: ''
+          breakpoint: ''
+      current_view_mode: default
+      icon: ''
+      layout: ''
+      cache: 0
+      optionset: default
+      skin: ''
+      style: ''
+      box_caption: ''
+      box_caption_custom: ''
+      box_style: ''
+      box_media_style: ''
+      responsive_image_style: ''
+      grid: 0
+      grid_header: ''
+      grid_medium: 0
+      grid_small: 0
+    third_party_settings: {  }
+    type: blazy_file
+    region: content
+hidden:
+  created: true
+  field_media_in_library: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

@@ -1,0 +1,11 @@
+uuid: ccaecae8-7cc1-4a0d-9000-da846e290e94
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.brick
+_core:
+  default_config_hash: HvqT5HVcFaaF87tErYQ4b86FHLdFDhEo4H-sWX8KkYU
+name: 'Media With Copy'
+type: media_with_copy
+description: ''

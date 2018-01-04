@@ -1,0 +1,21 @@
+uuid: af81a601-bee6-4a28-9691-e63621ad1811
+langcode: en
+status: true
+dependencies:
+  module:
+    - dropdown_language
+  theme:
+    - wendys_main
+id: dropdownlanguageselector
+theme: wendys_main
+region: footer_bottom
+weight: -5
+provider: null
+plugin: dropdown_language
+settings:
+  id: dropdown_language
+  label: 'Dropdown Language Selector'
+  provider: dropdown_language
+  label_display: '0'
+  labels: null
+visibility: {  }

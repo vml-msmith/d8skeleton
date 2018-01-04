@@ -1,0 +1,23 @@
+uuid: 8d48bb0d-275d-4574-b3a9-25281a57c73b
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+_core:
+  default_config_hash: L95Zxj1VDogcWh0upXWr1kVAPtHi0LenPX8A_nZn2qg
+id: brick.field_hero_copy
+field_name: field_hero_copy
+entity_type: brick
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

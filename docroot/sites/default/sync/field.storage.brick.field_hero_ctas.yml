@@ -1,0 +1,20 @@
+uuid: b5f1bb7b-5c29-42cd-b842-ebb565ef8b73
+langcode: en
+status: true
+dependencies:
+  module:
+    - bricks
+    - eck
+id: brick.field_hero_ctas
+field_name: field_hero_ctas
+entity_type: brick
+type: bricks
+settings:
+  target_type: sub_brick
+module: bricks
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

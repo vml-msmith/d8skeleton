@@ -1,0 +1,10 @@
+uuid: b954ab7a-8db8-456b-b30c-9bd6ca4e62ec
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 2WO1tfGQu3OYBQfiKKKNVP2VbjGGvPjQ9-C3MeUCf9U
+id: legal-menu
+label: 'Legal Menu'
+description: ''
+locked: false

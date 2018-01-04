@@ -1,0 +1,21 @@
+uuid: 016ee193-16b5-4fb5-9165-146bd772993c
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.brick.hero
+    - field.storage.brick.field_hero_copy
+_core:
+  default_config_hash: vWWWqDr-k-LjwFeKwu-u3myoQ3MLjBbNdc5DnplvBzQ
+id: brick.hero.field_hero_copy
+field_name: field_hero_copy
+entity_type: brick
+bundle: hero
+label: Copy
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

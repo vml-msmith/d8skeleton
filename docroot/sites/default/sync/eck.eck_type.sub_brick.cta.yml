@@ -1,0 +1,9 @@
+uuid: a5769df1-2c94-45d6-9038-0171faf7f415
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.sub_brick
+name: CTA
+type: cta
+description: ''

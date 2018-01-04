@@ -1,0 +1,31 @@
+uuid: 719c99c9-9000-4356-bc67-a5ee453a8541
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.brick.media_with_copy
+    - field.storage.brick.field_mediacopy_color_background
+    - taxonomy.vocabulary.brand_colors
+  module:
+    - bricks
+id: brick.media_with_copy.field_mediacopy_color_background
+field_name: field_mediacopy_color_background
+entity_type: brick
+bundle: media_with_copy
+label: 'Background Color'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      brand_colors: brand_colors
+    sort:
+      field: name
+      direction: asc
+    auto_create: 0
+    auto_create_bundle: ''
+field_type: bricks

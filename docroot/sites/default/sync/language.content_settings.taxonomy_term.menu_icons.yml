@@ -1,0 +1,11 @@
+uuid: 2bf48dc3-721b-4c10-9e8d-e32d0049766c
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.menu_icons
+id: taxonomy_term.menu_icons
+target_entity_type_id: taxonomy_term
+target_bundle: menu_icons
+default_langcode: site_default
+language_alterable: false

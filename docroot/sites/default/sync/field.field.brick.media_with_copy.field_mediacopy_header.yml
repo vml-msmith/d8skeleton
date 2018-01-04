@@ -1,0 +1,21 @@
+uuid: baeb13ad-4c63-4307-903e-04d18110b982
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.brick.media_with_copy
+    - field.storage.brick.field_mediacopy_header
+_core:
+  default_config_hash: TqB_o9HeCiEsSOzLXMdAxq5KsVXKUmfzR553lKO85Xc
+id: brick.media_with_copy.field_mediacopy_header
+field_name: field_mediacopy_header
+entity_type: brick
+bundle: media_with_copy
+label: Header
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

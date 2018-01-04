@@ -1,0 +1,9 @@
+uuid: 1ae9a7bd-ba5f-41ba-a8a6-45c176559681
+langcode: en
+status: true
+dependencies: {  }
+name: 'Menu Icons'
+vid: menu_icons
+description: ''
+hierarchy: 0
+weight: 0

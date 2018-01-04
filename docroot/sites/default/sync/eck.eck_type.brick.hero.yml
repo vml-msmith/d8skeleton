@@ -1,0 +1,11 @@
+uuid: 5f60f8ab-50f1-4fa3-b008-2e4154c6e77d
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.brick
+_core:
+  default_config_hash: 7zNxzz0z_6aZZuCWyillqeApX3g2hapOE7OKsUkMerw
+name: Hero
+type: hero
+description: ''

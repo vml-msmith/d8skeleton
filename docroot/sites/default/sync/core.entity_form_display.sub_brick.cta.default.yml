@@ -1,0 +1,32 @@
+uuid: 05ec1524-d311-4d7c-b8a8-119eb4a58989
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.sub_brick.cta
+    - field.field.sub_brick.cta.field_cta_link
+    - field.field.sub_brick.cta.field_cta_theme
+  module:
+    - link
+id: sub_brick.cta.default
+targetEntityType: sub_brick
+bundle: cta
+mode: default
+content:
+  field_cta_link:
+    weight: 0
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_cta_theme:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+hidden:
+  langcode: true
+  title: true
