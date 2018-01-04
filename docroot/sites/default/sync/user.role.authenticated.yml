@@ -15,3 +15,4 @@ permissions:
   - 'use text format basic_html'
   - 'view any brick entities'
   - 'view any sub_brick entities'
+  - 'view own unpublished content'
