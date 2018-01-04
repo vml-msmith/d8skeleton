@@ -91,6 +91,7 @@ function wendys_core_page_attachments(array &$page) {
 /**
  * Implements hook_tokens().
  */
+/*
 function wendys_core_tokens($type, $tokens, array $data, array $options, BubbleableMetadata $bubbleable_metadata) {
   $token_service = \Drupal::token();
 
@@ -106,7 +107,7 @@ function wendys_core_tokens($type, $tokens, array $data, array $options, Bubblea
     }
   }
   return $replacements;
-}
+  }*/
 
 /**
  * Implements hook_token_info().
