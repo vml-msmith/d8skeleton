@@ -85,7 +85,7 @@ function wendys_core_preprocess(&$variables, $hook) {
  * Implements hook_page_attachments()
  */
 function wendys_core_page_attachments(array &$page) {
-  $page['#attached']['library'][] = 'wendys_core/wendys.authentication';
+  //$page['#attached']['library'][] = 'wendys_core/wendys.authentication';
 }
 
 /**
