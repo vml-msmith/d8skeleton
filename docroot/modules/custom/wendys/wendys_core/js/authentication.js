@@ -2,11 +2,10 @@
  * @file
  */
 
-/* global Cookies */
-
 (function ($) {
   Drupal.behaviors.wendys_authentication = {
     attach(context, settings) {
+      /*
       const rawCookie = Cookies.get('wenGlobalWeb');
 
       if (rawCookie) {
@@ -21,6 +20,7 @@
           $('.default > .replace-location').once('test').html(`<div>Find a Wendy's</div><div>${parsedCookie.selectedLocation.title}</div>`);
         }
       }
+      */
       /*
       $('span[data-replace="account-balance"]', context).each(function() {
 
