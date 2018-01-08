@@ -46,7 +46,7 @@
 - Create your own settings.local.php
 
    ```
-	cp docroot/sites/default/settings.local.php.default docroot/sites/default/settings.local.php
+   cp docroot/sites/default/settings.local.php.default docroot/sites/default/settings.local.php
    ```
 
 - Setup Docksal utilities for building the site and compiling front end resources:
