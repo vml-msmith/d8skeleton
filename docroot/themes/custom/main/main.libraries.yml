@@ -1,0 +1,8 @@
+global:
+  version: 1.x
+  css:
+    layout:
+      dist/css/main.css: {}
+  js:
+    dist/js/main.js: {}
+  dependencies:

@@ -1,29 +1,29 @@
 module.exports = {
   app: {
-    baseName: 'wendys'
+    baseName: 'theme'
   },
   sass: {
     src: [
-      './wendys/styles/libraries/*.scss',
+      './theme/styles/libraries/*.scss',
     ],
     lintSrc: [
-      './wendys/styles/**/*.scss',
-      './wendys/styles/**/**/*.scss'
+      './theme/styles/**/*.scss',
+      './theme/styles/**/**/*.scss'
     ]
   },
   javascript: {
-    src: ['./wendys/scripts/**/*.js']
+    src: ['./theme/scripts/**/*.js']
   },
   images: {
-    src: ['./wendys/img/**/*']
+    src: ['./theme/img/**/*']
   },
   fonts: {
-    src: ['./wendys/fonts/*']
+    src: ['./theme/fonts/*']
   },
   buildLocations: {
-    css: '../docroot/themes/custom/wendys_main/dist/css',
-    js: '../docroot/themes/custom/wendys_main/dist/js',
-    img: '../docroot/themes/custom/wendys_main/dist/img',
-    fonts: '../docroot/themes/custom/wendys_main/dist/fonts'
+    css: '../docroot/themes/custom/main/dist/css',
+    js: '../docroot/themes/custom/main/dist/js',
+    img: '../docroot/themes/custom/main/dist/img',
+    fonts: '../docroot/themes/custom/main/dist/fonts'
   }
 };

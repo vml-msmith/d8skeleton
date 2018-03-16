@@ -8,7 +8,7 @@
 /**
  * {@inheritdoc}
  */
-function wendys_main_preprocess(&$variables, $hook, $info) {
+function main_preprocess(&$variables, $hook, $info) {
   if ($hook === 'eck_entity') {
     $bundle = $variables['bundle'];
     $entity = $variables['eck_entity'];

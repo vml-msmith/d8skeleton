@@ -1,6 +1,6 @@
-name: Wendys Main
+name: Main
 type: theme
-description: 'A custom theme for wendys.com'
+description: 'A custom theme.'
 core: 8.x
 base theme: classy
 
@@ -19,4 +19,4 @@ ckeditor_stylesheets:
   - dist/css/global/ckeditor-iframe.css
 
 libraries:
-  - wendys_main/wendys-global
+  - main/global
