@@ -2,15 +2,15 @@
 
 ## Local Drupal Setup
 - Install Docksal
-- Clone the Wendys.com repository from bitbucket: ssh://git@bitbucket-ssh.uhub.biz:7999/vmlnawen/wendys.com.git
+- Clone the repository
  
   ```
-  git clone ssh://git@bitbucket-ssh.uhub.biz:7999/vmlnawen/wendys.com.git wendys
+  git clone <repo> drupal_project
   ```
-- Change directory to the wendy's project:
+- Change directory to the project:
 
   ```
-  cd wendys
+  cd drupal_project
   ```
 - Initialize the project's Docksal environment
 
@@ -18,17 +18,13 @@
   fin start
   ```
   
-- Add local.wendys.com to your local hosts file:
+- Add local.website.com to your local hosts file:
 
   ```
   fin hosts add
   ```
 
-- Download and setup the Wendy's database from the Development environment:
-	- Login to insight.acquia.com
-	- Select the Wendy's project.
-	- Select the Development environment.
-	- Select "Databases" from the left hand menu.
+- Download and setup the the Development environment:
 	- Download the latest database.
 	- Save the file to local Downloads directory.
 	- Install the DB to the Docksal environment
@@ -40,7 +36,7 @@
 - Download Dev uploaded files(images) to local file system:
 
   ```
-  rsync -azrltDvPh  wendys.dev@wendysdev.ssh.prod.acquia-sites.com:/mnt/files/wendysdev/sites/default/files/ docoot/sites/default/files/
+  rsync -azrltDvPh  <sshUser>@<sshHost>:/<pathToDocroot>/files/ docroot/sites/default/files/
   ```
 
 - Create your own settings.local.php
@@ -77,11 +73,7 @@
   ```
   
 ## Update to latest from Dev:
-- Download and setup the Wendy's database from the Development environment:
-	- Login to insight.acquia.com
-	- Select the Wendy's project.
-	- Select the Development environment.
-	- Select "Databases" from the left hand menu.
+- Download and setup the database from the Development environment:
 	- Download the latest database.
 	- Save the file to local Downloads directory.
 	- Install the DB to the Docksal environment
@@ -93,7 +85,7 @@
 - Download Dev uploaded files(images) to local file system:
 
   ```
-  rsync -azrltDvPh  wendys.dev@wendysdev.ssh.prod.acquia-sites.com:/mnt/files/wendysdev/sites/default/files/ docoot/sites/default/files/
+  rsync -azrltDvPh  <sshUser>@<sshHost>:/<pathToDocroot>/files/ docroot/sites/default/files/
   ```
 
 - Clear the local Drupal cache (**NOTE: Make sure you're in docroot**):
@@ -142,10 +134,10 @@
 ## General Notes
 ### Front End
 - Prefer not to use new twig templates for bricks/blocks/nodes/menus/etc. Instead use field groups and CSS to style.
-- Use preprocess methods in wendys_main.theme to add classes when needed.
-- Front end code is written in themesrc/wendys/, the compile process will move it to the correct theme location.
-- SCSS for each Brick/Component on the page shoukd have it's own file defined in themesrc/wendys/styles/libraries.
-- Each library should be it's own library in the wendys_main theme.
+- Use preprocess methods in main.theme to add classes when needed.
+- Front end code is written in themesrc/theme/, the compile process will move it to the correct theme location.
+- SCSS for each Brick/Component on the page should have it's own file defined in themesrc/theme/styles/libraries.
+- Each library should be it's own library in the main theme.
 - ALWAYS work in mobile first.
 - Prefer pre-built libraries instead of custom code where possible.
 - Wrap your JavaScript in once() methods to ensure they're only fired once when necessary.
